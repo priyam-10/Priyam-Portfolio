@@ -1,0 +1,60 @@
+import type { CertificationItem } from '../types';
+
+export const certificationsData: CertificationItem[] = [
+  {
+    id: 'oracle-ai',
+    title: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
+    issuer: 'Oracle University',
+    completionDate: '2025',
+    image: '/assets/certificates/oracle-ai-foundations.jpg',
+    topics: ['Artificial Intelligence', 'OCI Foundations', 'Machine Learning Concepts'],
+  },
+  {
+    id: 'tata-genai',
+    title: 'GenAI Powered Data Analytics Job Simulation',
+    issuer: 'Tata / Forage',
+    completionDate: 'May 2026',
+    image: '/assets/certificates/tata-genai-analytics.jpg',
+    topics: ['Generative AI', 'Data Analytics', 'Business Insight Communication'],
+  },
+  {
+    id: 'deloitte-analytics',
+    title: 'Data Analytics Job Simulation',
+    issuer: 'Deloitte / Forage',
+    completionDate: 'June 2026',
+    image: '/assets/certificates/deloitte-data-analytics.png',
+    topics: ['Data Analysis', 'Client Communication', 'Dashboard Insights'],
+  },
+  {
+    id: 'sql-learning',
+    title: 'Learning SQL Programming',
+    issuer: 'LinkedIn Learning',
+    completionDate: 'July 2026',
+    image: '/assets/certificates/sql-learning.jpg',
+    topics: ['SQL Queries', 'Relational Databases', 'Data Manipulation'],
+  },
+  {
+    id: 'pandas-training',
+    title: 'Pandas Essential Training',
+    issuer: 'LinkedIn Learning',
+    completionDate: '2026',
+    image: '/assets/certificates/pandas-training.jpg',
+    topics: ['Data Wrangling', 'Pandas DataFrames', 'Data Cleaning'],
+  },
+  {
+    id: 'analytics-vidhya-eda',
+    title: 'Exploratory Data Analysis with Python & SQL',
+    issuer: 'Analytics Vidhya',
+    completionDate: '2026',
+    image: '/assets/certificates/analytics-vidhya.jpg',
+    topics: ['Exploratory Data Analysis', 'Python & SQL Intersect', 'Data Visualization'],
+  },
+  {
+    id: 'unstop-analytics',
+    title: 'Data Analytics',
+    issuer: 'Unstop',
+    completionDate: '2026',
+    image: '/assets/certificates/unstop-data-analytics.jpg',
+    topics: ['Data Analytics', 'Business Case Analysis', 'Problem Solving'],
+  },
+];
