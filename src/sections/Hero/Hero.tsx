@@ -9,6 +9,7 @@ import {
   Cpu,
   FolderGit2,
   Briefcase,
+  TrendingUp,
 } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { Button } from '../../components/Buttons/Button';
@@ -32,21 +33,22 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-4rem)] pt-20 pb-6 lg:pt-20 lg:pb-6 flex flex-col justify-between overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] pt-18 pb-4 lg:pt-20 lg:pb-5 flex flex-col justify-between overflow-hidden"
     >
-      {/* Background ambient gradient glow */}
+      {/* Background ambient lighting */}
       <div className="absolute top-1/4 -left-36 w-80 h-80 bg-[#FF8C00]/8 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 -right-36 w-80 h-80 bg-[#FF3D71]/8 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center">
-        {/* Two-Column Hero Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center my-auto">
-          {/* Left Column: Information Layout */}
+      {/* Main Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
+        {/* Two-Column Hero Content Area */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center my-auto py-2 sm:py-4">
+          {/* Left Column: Information Layout & Typography */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 space-y-4 text-center lg:text-left"
+            className="lg:col-span-7 space-y-3.5 text-center lg:text-left"
           >
             {/* Availability Indicator */}
             <motion.div variants={fadeInUp} className="inline-flex items-center">
@@ -58,10 +60,10 @@ export const Hero = () => {
 
             {/* Short Greeting & Main Headline */}
             <motion.div variants={fadeInUp} className="space-y-1">
-              <p className="text-sm font-semibold tracking-wide text-slate-300">
+              <p className="text-xs sm:text-sm font-semibold tracking-wide text-slate-400">
                 Hi, I'm <span className="text-white font-bold">{profileData.name}</span>
               </p>
-              <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[44px] font-extrabold text-white tracking-tight leading-[1.18]">
+              <h1 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-extrabold text-white tracking-tight leading-[1.16]">
                 Turning Data into <br className="hidden sm:inline" />
                 <span className="text-gradient">Actionable Insights</span>
               </h1>
@@ -73,15 +75,15 @@ export const Hero = () => {
             {/* Concise Professional Description */}
             <motion.p
               variants={fadeInUp}
-              className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal"
+              className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal"
             >
               {profileData.introduction}
             </motion.p>
 
-            {/* CTA Buttons Row */}
+            {/* Action Buttons Row */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1"
             >
               <Button
                 variant="primary"
@@ -118,7 +120,7 @@ export const Hero = () => {
             {/* Social Links Strip */}
             <motion.div
               variants={fadeInUp}
-              className="pt-2 flex items-center justify-center lg:justify-start gap-3 text-xs"
+              className="pt-1.5 flex items-center justify-center lg:justify-start gap-3 text-xs"
             >
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
                 Connect
@@ -154,56 +156,136 @@ export const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Original Transparent PNG Portrait (Natural Cutout, No Box/Frame) */}
+          {/* Right Column: Editorial Portrait Composition with Data Workspace Atmosphere */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 flex items-center justify-center lg:justify-end relative"
+            className="lg:col-span-5 flex items-center justify-center relative select-none"
           >
-            {/* Subtle soft ambient glow behind cutout */}
-            <div className="absolute w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-tr from-[#FF8C00]/15 via-[#FF6A4D]/10 to-[#FF3D71]/15 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px] flex items-center justify-center">
+              {/* Soft Organic Background Shape in warm muted tones */}
+              <div className="absolute inset-0 m-auto w-[270px] h-[330px] sm:w-[320px] sm:h-[370px] lg:w-[340px] lg:h-[390px] rounded-[50%_50%_56%_44%/48%_52%_48%_52%] bg-gradient-to-tr from-[#1B161B] via-[#121522] to-[#111726] border border-white/[0.06] shadow-[0_0_60px_-10px_rgba(255,140,0,0.14)] -z-0" />
 
-            {/* Naturally positioned transparent cutout portrait */}
-            <img
-              src="/assets/profile/profile.png"
-              alt="Priyam Singh - Data Analyst and Machine Learning Engineer"
-              className="relative z-10 max-h-[320px] sm:max-h-[360px] lg:max-h-[390px] xl:max-h-[410px] w-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.65)] select-none pointer-events-none filter contrast-[1.02]"
-            />
-          </motion.div>
-        </div>
-
-        {/* Four Highlight Cards — Single Horizontal Row on Desktop */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="mt-6 pt-4 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-4"
-        >
-          {profileData.highlightCards.map((card) => {
-            const IconComponent = iconMap[card.icon] || Cpu;
-            return (
-              <motion.div
-                key={card.title}
-                variants={fadeInUp}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.2 }}
-                className="p-3.5 rounded-xl bg-[#121520]/80 border border-[#202535] hover:border-[#FF8C00]/40 transition-all flex items-center gap-3 shadow-sm"
+              {/* Subtle Orbital Graph Ring */}
+              <svg
+                className="absolute inset-0 m-auto w-[330px] h-[330px] sm:w-[380px] sm:h-[380px] pointer-events-none opacity-20 -z-0"
+                viewBox="0 0 380 380"
+                fill="none"
               >
-                <div className="w-9 h-9 rounded-lg bg-[#181D2A] border border-[#252E40] flex items-center justify-center text-[#FF8C00] shrink-0">
-                  <IconComponent className="w-4 h-4" />
+                <circle
+                  cx="190"
+                  cy="190"
+                  r="170"
+                  stroke="#FF8C00"
+                  strokeWidth="1"
+                  strokeDasharray="4 6"
+                />
+                <circle
+                  cx="190"
+                  cy="190"
+                  r="135"
+                  stroke="#FF3D71"
+                  strokeWidth="0.8"
+                  strokeDasharray="2 4"
+                />
+                <circle cx="355" cy="150" r="2.5" fill="#FF8C00" />
+                <circle cx="35" cy="220" r="2.5" fill="#FF3D71" />
+              </svg>
+
+              {/* Data Analytics Visual Badge 1: Top Right Metric */}
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.5 }}
+                className="absolute -top-1 right-1 sm:right-3 lg:-right-1 z-20 px-3 py-1.5 rounded-xl bg-[#121522]/90 backdrop-blur-md border border-white/[0.08] shadow-xl flex items-center gap-2"
+              >
+                <div className="w-6 h-6 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                  <TrendingUp className="w-3 h-3" />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-bold text-white tracking-tight truncate">
-                    {card.title}
-                  </h3>
-                  <p className="text-[11px] text-slate-400 font-medium truncate mt-0.5">
-                    {card.subtitle}
+                <div className="text-left">
+                  <p className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-none">
+                    Accuracy
+                  </p>
+                  <p className="text-xs font-bold text-white font-mono flex items-center gap-1 leading-none mt-0.5">
+                    <span>94.8%</span>
+                    <span className="text-[8px] text-emerald-400 font-normal">ROC</span>
                   </p>
                 </div>
               </motion.div>
-            );
-          })}
+
+              {/* Data Analytics Visual Badge 2: Bottom Left Data Pipeline */}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.5 }}
+                className="absolute bottom-4 -left-2 sm:left-2 lg:-left-2 z-20 px-3 py-1.5 rounded-xl bg-[#121522]/90 backdrop-blur-md border border-white/[0.08] shadow-xl flex items-center gap-2.5"
+              >
+                {/* Minimal SVG Bar Chart */}
+                <div className="flex items-end gap-1 h-5">
+                  <span className="w-1.5 h-2 rounded-sm bg-[#FF8C00]/40" />
+                  <span className="w-1.5 h-3.5 rounded-sm bg-[#FF8C00]/75" />
+                  <span className="w-1.5 h-5 rounded-sm bg-gradient-to-t from-[#FF8C00] to-[#FF3D71]" />
+                  <span className="w-1.5 h-3 rounded-sm bg-[#FF3D71]/60" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-none">
+                    Analytics
+                  </p>
+                  <p className="text-xs font-bold text-white flex items-center gap-1 leading-none mt-0.5">
+                    <span>Live Pipeline</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Subtle Workspace Code Accent Pill */}
+              <div className="absolute -bottom-2 right-4 z-20 hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0E1119]/85 border border-white/[0.07] backdrop-blur-sm text-[10px] font-mono text-slate-400 shadow-md">
+                <span className="text-[#FF8C00]">df</span>.insights() <span className="text-emerald-400">✓</span>
+              </div>
+
+              {/* Priyam's Original Transparent Portrait (Dominant Central Subject) */}
+              <img
+                src="/assets/profile/profile.png"
+                alt="Priyam Singh - Data Analyst and Machine Learning Engineer"
+                className="relative z-10 max-h-[300px] sm:max-h-[340px] lg:max-h-[370px] xl:max-h-[390px] w-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] pointer-events-none filter contrast-[1.02]"
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Separate Elegant Information Strip at the Bottom of the Hero */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-4 pt-3 pb-1"
+        >
+          <div className="w-full rounded-2xl bg-[#10131D]/80 border border-white/[0.08] backdrop-blur-md shadow-lg shadow-black/25 p-2 sm:p-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+              {profileData.highlightCards.map((card) => {
+                const IconComponent = iconMap[card.icon] || Cpu;
+                return (
+                  <div
+                    key={card.title}
+                    className="flex items-center gap-3 py-2 px-3 sm:px-4 hover:bg-white/[0.02] transition-colors rounded-xl"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#181D2A] border border-[#252E40] flex items-center justify-center text-[#FF8C00] shrink-0">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-xs sm:text-sm font-bold text-white tracking-tight truncate">
+                        {card.title}
+                      </h3>
+                      <p className="text-[11px] text-slate-400 font-medium truncate mt-0.5">
+                        {card.subtitle}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
