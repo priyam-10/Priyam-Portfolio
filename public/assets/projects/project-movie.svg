@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0E17"/>
+      <stop offset="100%" stop-color="#111625"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Left: Budget vs. Gross Revenue Logarithmic Scatter -->
+  <g transform="translate(100, 100)">
+    <rect width="620" height="475" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="28" y="38" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">PRODUCTION BUDGET VS. GLOBAL REVENUE (LOG SCATTER)</text>
+
+    <g transform="translate(50, 75)">
+      <line x1="0" y1="320" x2="520" y2="320" stroke="#334155" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="320" stroke="#334155" stroke-width="1"/>
+      <text x="520" y="340" fill="#64748B" font-family="Inter, sans-serif" font-size="10" text-anchor="end">Log Production Budget ($M)</text>
+      <text x="-10" y="-10" fill="#64748B" font-family="Inter, sans-serif" font-size="10">Log Gross ($M)</text>
+
+      <!-- Regression line -->
+      <line x1="30" y1="290" x2="490" y2="40" stroke="#FF8C00" stroke-width="2"/>
+
+      <!-- Scatter cluster -->
+      <g fill="#38BDF8" opacity="0.6">
+        <circle cx="50" cy="280" r="3.5"/><circle cx="70" cy="270" r="4"/><circle cx="85" cy="250" r="3"/>
+        <circle cx="110" cy="245" r="4.5"/><circle cx="130" cy="210" r="3"/><circle cx="150" cy="230" r="4"/>
+        <circle cx="180" cy="190" r="3.5"/><circle cx="210" cy="205" r="4"/><circle cx="240" cy="170" r="4.5"/>
+        <circle cx="270" cy="150" r="3.5"/><circle cx="300" cy="165" r="4"/><circle cx="330" cy="130" r="3"/>
+        <circle cx="360" cy="115" r="4.5"/><circle cx="390" cy="100" r="4"/><circle cx="420" cy="85" r="4"/>
+        <circle cx="450" cy="65" r="3.5"/><circle cx="480" cy="50" r="5"/><circle cx="290" cy="190" r="3"/>
+        <circle cx="200" cy="250" r="4"/><circle cx="340" cy="90" r="3.5"/><circle cx="410" cy="120" r="4"/>
+      </g>
+    </g>
+
+    <text x="28" y="445" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="11">Pearson Correlation Coefficient r = 0.742 (p &lt; 0.001)</text>
+  </g>
+
+  <!-- Right: Correlation Heatmap Matrix -->
+  <g transform="translate(750, 100)">
+    <rect width="350" height="475" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">CORRELATION MATRIX HEATMAP</text>
+
+    <!-- 4x4 matrix grid -->
+    <g transform="translate(45, 80)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">
+      <!-- Headers -->
+      <text x="40" y="-10" fill="#94A3B8">Budget</text>
+      <text x="110" y="-10" fill="#94A3B8">Gross</text>
+      <text x="180" y="-10" fill="#94A3B8">Votes</text>
+      <text x="250" y="-10" fill="#94A3B8">Score</text>
+
+      <!-- Row 1: Budget -->
+      <rect x="10" y="5" width="60" height="60" rx="6" fill="#FF8C00"/>
+      <text x="40" y="40" fill="#FFFFFF" font-weight="700">1.00</text>
+      <rect x="80" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.74"/>
+      <text x="110" y="40" fill="#FFFFFF">0.74</text>
+      <rect x="150" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.51"/>
+      <text x="180" y="40" fill="#FFFFFF">0.51</text>
+      <rect x="220" y="5" width="60" height="60" rx="6" fill="#1E293B"/>
+      <text x="250" y="40" fill="#94A3B8">0.07</text>
+
+      <!-- Row 2: Gross -->
+      <g transform="translate(0, 70)">
+        <rect x="10" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.74"/>
+        <text x="40" y="40" fill="#FFFFFF">0.74</text>
+        <rect x="80" y="5" width="60" height="60" rx="6" fill="#FF8C00"/>
+        <text x="110" y="40" fill="#FFFFFF" font-weight="700">1.00</text>
+        <rect x="150" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.63"/>
+        <text x="180" y="40" fill="#FFFFFF">0.63</text>
+        <rect x="220" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.22"/>
+        <text x="250" y="40" fill="#FFFFFF">0.22</text>
+      </g>
+
+      <!-- Row 3: Votes -->
+      <g transform="translate(0, 140)">
+        <rect x="10" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.51"/>
+        <text x="40" y="40" fill="#FFFFFF">0.51</text>
+        <rect x="80" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.63"/>
+        <text x="110" y="40" fill="#FFFFFF">0.63</text>
+        <rect x="150" y="5" width="60" height="60" rx="6" fill="#FF8C00"/>
+        <text x="180" y="40" fill="#FFFFFF" font-weight="700">1.00</text>
+        <rect x="220" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.41"/>
+        <text x="250" y="40" fill="#FFFFFF">0.41</text>
+      </g>
+
+      <!-- Row 4: Score -->
+      <g transform="translate(0, 210)">
+        <rect x="10" y="5" width="60" height="60" rx="6" fill="#1E293B"/>
+        <text x="40" y="40" fill="#94A3B8">0.07</text>
+        <rect x="80" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.22"/>
+        <text x="110" y="40" fill="#FFFFFF">0.22</text>
+        <rect x="150" y="5" width="60" height="60" rx="6" fill="#FF8C00" opacity="0.41"/>
+        <text x="180" y="40" fill="#FFFFFF">0.41</text>
+        <rect x="220" y="5" width="60" height="60" rx="6" fill="#FF8C00"/>
+        <text x="250" y="40" fill="#FFFFFF" font-weight="700">1.00</text>
+      </g>
+    </g>
+  </g>
+</svg>

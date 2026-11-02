@@ -30,7 +30,9 @@ export interface ProjectItem {
   category: 'Machine Learning' | 'Data Analytics' | 'Business Intelligence' | 'Exploratory Data Analysis' | 'Artificial Intelligence' | 'Hackathon';
   shortDescription: string;
   problemStatement: string;
+  objectives?: string[];
   keyImplementation: string[];
+  approach?: string[];
   technologies: string[];
   githubUrl: string;
   liveDemoUrl?: string;

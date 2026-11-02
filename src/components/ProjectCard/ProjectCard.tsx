@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowRight, Layers } from 'lucide-react';
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 import type { ProjectItem } from '../../types';
-import { Button } from '../Buttons/Button';
 import { fadeInUp } from '../../lib/animations';
 
 interface ProjectCardProps {
@@ -10,130 +9,114 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project, onOpenModal }: ProjectCardProps) => {
-  const categoryColors: Record<string, string> = {
-    'Machine Learning': 'bg-[#FF8C00]/15 text-[#FF8C00] border-[#FF8C00]/30',
-    'Data Analytics': 'bg-cyan-500/15 text-cyan-400 border-cyan-500/30',
-    'Business Intelligence': 'bg-purple-500/15 text-purple-400 border-purple-500/30',
-    'Exploratory Data Analysis': 'bg-blue-500/15 text-blue-400 border-blue-500/30',
-    'Artificial Intelligence': 'bg-rose-500/15 text-rose-400 border-rose-500/30',
-    Hackathon: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
-  };
-
-  const badgeClass =
-    categoryColors[project.category] ||
-    'bg-[#FF8C00]/15 text-[#FF8C00] border-[#FF8C00]/30';
-
   return (
     <motion.article
       variants={fadeInUp}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.25, ease: 'easeOut' }}
-      className="group relative flex flex-col rounded-2xl bg-[#131620] border border-[#222838] hover:border-[#FF8C00]/50 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col rounded-2xl bg-[#10131E]/85 border border-white/[0.07] hover:border-white/[0.16] hover:bg-[#121624] transition-all duration-300 overflow-hidden shadow-lg shadow-black/20 h-full justify-between"
     >
-      {/* Top Banner / Screenshot */}
-      <div className="relative aspect-video w-full overflow-hidden bg-[#0D0F17] border-b border-[#1C2230]">
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            loading="lazy"
-            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#121520] to-[#0D0F17]">
-            <Layers className="w-10 h-10 text-slate-600 mb-2 group-hover:text-[#FF8C00] transition-colors" />
-            <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">
-              {project.category}
-            </span>
-          </div>
-        )}
+      {/* 1. 16:9 Project Thumbnail Container */}
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0D0F17] border-b border-white/[0.06]">
+        <img
+          src={project.image}
+          alt={`${project.title} technical visual`}
+          loading="lazy"
+          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
+        />
 
-        <div className="absolute top-3 left-3 flex items-center gap-2">
-          <span
-            className={`px-3 py-1 rounded-full text-[11px] font-semibold border backdrop-blur-md ${badgeClass}`}
-          >
+        {/* 2. Small Category Label (Top-Left) */}
+        <div className="absolute top-3 left-3">
+          <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-[#0D1019]/85 text-[#FF8C00] border border-white/[0.08] backdrop-blur-md">
             {project.category}
           </span>
         </div>
 
+        {/* 8. Live Demo Indicator (Top-Right, ONLY if verified working demo exists) */}
         {project.liveDemoUrl && (
           <div className="absolute top-3 right-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-black/60 text-emerald-400 border border-emerald-500/40 backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] font-semibold bg-[#0D1019]/85 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Live
+              Live Demo
             </span>
           </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-5 sm:p-6">
-        <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-[#FF8C00] transition-colors line-clamp-1">
-          {project.title}
-        </h3>
+      {/* Card Content Area with Aligned Heights */}
+      <div className="flex flex-col flex-1 p-5 sm:p-5.5 justify-between">
+        {/* Title & Concise 2-Line Description */}
+        <div>
+          {/* 3. Project Title */}
+          <h3 className="text-base sm:text-[17px] font-bold text-white tracking-tight group-hover:text-[#FF8C00] transition-colors line-clamp-1">
+            {project.title}
+          </h3>
 
-        <p className="mt-2 text-xs sm:text-sm text-slate-400 line-clamp-2 leading-relaxed flex-1">
-          {project.shortDescription}
-        </p>
-
-        {/* Technology Tags */}
-        <div className="mt-4 pt-4 border-t border-[#1C2230] flex flex-wrap gap-1.5">
-          {project.technologies.slice(0, 4).map((tech) => (
-            <span
-              key={tech}
-              className="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-[#191E2C] text-slate-300 border border-[#242C3E]"
-            >
-              {tech}
-            </span>
-          ))}
-          {project.technologies.length > 4 && (
-            <span className="px-2 py-0.5 text-[10px] font-medium rounded-md bg-transparent text-slate-500 border border-dashed border-[#242C3E]">
-              +{project.technologies.length - 4}
-            </span>
-          )}
+          {/* 4. Concise Two-Line Description */}
+          <p className="mt-2 text-xs sm:text-[13px] text-slate-400 line-clamp-2 leading-relaxed">
+            {project.shortDescription}
+          </p>
         </div>
 
-        {/* Action Buttons */}
-        <div className="mt-5 pt-3 border-t border-[#1C2230] flex items-center justify-between gap-2">
-          <button
-            type="button"
-            onClick={() => onOpenModal(project)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF8C00] hover:text-[#FF6A4D] transition-colors focus:outline-none"
-          >
-            <span>Project Details</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </button>
+        <div>
+          {/* 5. Verified Technology Tags (Maximum 4 visible) */}
+          <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex flex-wrap gap-1.5 items-center">
+            {project.technologies.slice(0, 4).map((tech) => (
+              <span
+                key={tech}
+                className="px-2.5 py-0.5 text-[11px] font-medium rounded-md bg-[#141824] text-slate-300 border border-white/[0.05]"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.technologies.length > 4 && (
+              <span className="px-1.5 py-0.5 text-[10px] font-mono text-slate-500">
+                +{project.technologies.length - 4}
+              </span>
+            )}
+          </div>
 
-          <div className="flex items-center gap-2">
-            <Button
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-              size="sm"
-              aria-label={`View ${project.title} on GitHub`}
-              className="p-2"
+          {/* Action Row */}
+          <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between gap-3">
+            {/* 6. Clear View Details Link */}
+            <button
+              type="button"
+              onClick={() => onOpenModal(project)}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF8C00] hover:text-[#FF6A4D] transition-colors focus:outline-none focus-visible:underline cursor-pointer group/btn"
             >
-              <Github className="w-3.5 h-3.5" />
-            </Button>
+              <span>View Details</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
+            </button>
 
-            {project.liveDemoUrl && (
-              <Button
-                href={project.liveDemoUrl}
+            {/* Links Group */}
+            <div className="flex items-center gap-2">
+              {/* 7. GitHub Icon / Link */}
+              <a
+                href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="primary"
-                size="sm"
-                aria-label={`View live demo for ${project.title}`}
-                className="p-2"
+                aria-label={`View ${project.title} source code on GitHub`}
+                className="p-2 rounded-lg bg-[#141824] hover:bg-[#1A2030] text-slate-400 hover:text-white border border-white/[0.06] hover:border-white/[0.14] transition-all"
+                title="View GitHub Repository"
               >
-                <ExternalLink className="w-3.5 h-3.5" />
-              </Button>
-            )}
+                <Github className="w-3.5 h-3.5" />
+              </a>
+
+              {/* 8. Live Demo Link (ONLY if working demo confirmed) */}
+              {project.liveDemoUrl && (
+                <a
+                  href={project.liveDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Launch live demo for ${project.title}`}
+                  className="p-2 rounded-lg bg-[#FF8C00]/10 hover:bg-[#FF8C00]/20 text-[#FF8C00] hover:text-white border border-[#FF8C00]/30 hover:border-[#FF8C00]/50 transition-all"
+                  title="Launch Live Application"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
     </motion.article>
   );
 };
-

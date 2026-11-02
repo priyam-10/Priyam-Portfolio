@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0E17"/>
+      <stop offset="100%" stop-color="#111625"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#FF3D71"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="white" stroke-opacity="0.04" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="675"/>
+    <line x1="280" y1="0" x2="280" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="680" y1="0" x2="680" y2="675"/>
+    <line x1="880" y1="0" x2="880" y2="675"/>
+    <line x1="1080" y1="0" x2="1080" y2="675"/>
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="330" x2="1200" y2="330"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+    <line x1="0" y1="570" x2="1200" y2="570"/>
+  </g>
+
+  <!-- Left: Clinical Input Features Node -->
+  <g transform="translate(100, 120)">
+    <rect width="280" height="435" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="24" y="38" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">CLINICAL FEATURE VECTORS</text>
+    
+    <g transform="translate(24, 60)" font-family="JetBrains Mono, monospace" font-size="12" fill="#E2E8F0">
+      <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+      <text x="14" y="27" fill="#CBD5E1">Age, Sex (Cleveland)</text>
+      <text x="185" y="27" fill="#38BDF8">norm</text>
+
+      <g transform="translate(0, 56)">
+        <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+        <text x="14" y="27" fill="#CBD5E1">RestingBP (mm Hg)</text>
+        <text x="185" y="27" fill="#38BDF8">z-score</text>
+      </g>
+
+      <g transform="translate(0, 112)">
+        <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+        <text x="14" y="27" fill="#CBD5E1">Serum Chol (mg/dl)</text>
+        <text x="185" y="27" fill="#38BDF8">z-score</text>
+      </g>
+
+      <g transform="translate(0, 168)">
+        <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+        <text x="14" y="27" fill="#CBD5E1">Max Heart Rate (bpm)</text>
+        <text x="185" y="27" fill="#38BDF8">scaled</text>
+      </g>
+
+      <g transform="translate(0, 224)">
+        <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+        <text x="14" y="27" fill="#CBD5E1">ST Depression / Slope</text>
+        <text x="185" y="27" fill="#38BDF8">float</text>
+      </g>
+
+      <g transform="translate(0, 280)">
+        <rect width="232" height="44" rx="8" fill="#1A2133" stroke="white" stroke-opacity="0.05"/>
+        <text x="14" y="27" fill="#CBD5E1">Thal / Major Vessels</text>
+        <text x="185" y="27" fill="#38BDF8">cat</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Flow Connector Lines -->
+  <path d="M 380 337 L 450 337" stroke="url(#orangeGrad)" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="450" cy="337" r="4" fill="#FF8C00"/>
+
+  <!-- Center: Logistic Regression Decision Boundary -->
+  <g transform="translate(450, 120)">
+    <rect width="400" height="435" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="28" y="38" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">LOGISTIC REGRESSION DECISION BOUNDARY</text>
+
+    <!-- Graph axes -->
+    <g transform="translate(45, 75)">
+      <line x1="0" y1="280" x2="310" y2="280" stroke="#334155" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="0" y2="280" stroke="#334155" stroke-width="1.5"/>
+      <text x="310" y="295" fill="#64748B" font-family="Inter, sans-serif" font-size="10" text-anchor="end">Max HR</text>
+      <text x="-10" y="-10" fill="#64748B" font-family="Inter, sans-serif" font-size="10">ST Depression</text>
+
+      <!-- Decision boundary line -->
+      <line x1="20" y1="260" x2="280" y2="30" stroke="#FF8C00" stroke-width="2.5"/>
+      
+      <!-- Class 0 points (Low Risk) -->
+      <g fill="#38BDF8" opacity="0.85">
+        <circle cx="50" cy="220" r="4.5"/>
+        <circle cx="70" cy="245" r="4.5"/>
+        <circle cx="95" cy="190" r="4.5"/>
+        <circle cx="120" cy="210" r="4.5"/>
+        <circle cx="140" cy="180" r="4.5"/>
+        <circle cx="170" cy="160" r="4.5"/>
+        <circle cx="210" cy="140" r="4.5"/>
+        <circle cx="240" cy="110" r="4.5"/>
+        <circle cx="260" cy="130" r="4.5"/>
+      </g>
+
+      <!-- Class 1 points (High Risk) -->
+      <g fill="#FF3D71" opacity="0.85">
+        <circle cx="40" cy="140" r="4.5"/>
+        <circle cx="65" cy="110" r="4.5"/>
+        <circle cx="85" cy="80" r="4.5"/>
+        <circle cx="110" cy="120" r="4.5"/>
+        <circle cx="130" cy="70" r="4.5"/>
+        <circle cx="160" cy="60" r="4.5"/>
+        <circle cx="180" cy="40" r="4.5"/>
+        <circle cx="220" cy="50" r="4.5"/>
+        <circle cx="150" cy="95" r="4.5"/>
+      </g>
+    </g>
+
+    <text x="28" y="405" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="11">Sigmoid P(Y=1|X) = 1 / (1 + e^-z)</text>
+  </g>
+
+  <!-- Right: Model Metrics & Diagnostic Classification -->
+  <g transform="translate(875, 120)">
+    <rect width="225" height="435" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="20" y="38" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">EVALUATION METRICS</text>
+
+    <!-- Metric Cards -->
+    <g transform="translate(20, 65)">
+      <rect width="185" height="70" rx="8" fill="#182030" stroke="white" stroke-opacity="0.05"/>
+      <text x="14" y="24" fill="#64748B" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5">ROC-AUC SCORE</text>
+      <text x="14" y="52" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="22" font-weight="700">0.892</text>
+    </g>
+
+    <g transform="translate(20, 150)">
+      <rect width="185" height="70" rx="8" fill="#182030" stroke="white" stroke-opacity="0.05"/>
+      <text x="14" y="24" fill="#64748B" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5">DIAGNOSTIC RECALL</text>
+      <text x="14" y="52" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="22" font-weight="700">88.5%</text>
+    </g>
+
+    <g transform="translate(20, 235)">
+      <rect width="185" height="70" rx="8" fill="#182030" stroke="white" stroke-opacity="0.05"/>
+      <text x="14" y="24" fill="#64748B" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="0.5">F1-SCORE</text>
+      <text x="14" y="52" fill="#FF8C00" font-family="JetBrains Mono, monospace" font-size="22" font-weight="700">0.864</text>
+    </g>
+
+    <g transform="translate(20, 320)">
+      <rect width="185" height="85" rx="8" fill="#1A1526" stroke="#FF3D71" stroke-opacity="0.25"/>
+      <text x="14" y="24" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="11" font-weight="600">INFERENCE ENGINE</text>
+      <text x="14" y="46" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10">Joblib Serialized Model</text>
+      <text x="14" y="66" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="10">latency: 12ms</text>
+    </g>
+  </g>
+</svg>

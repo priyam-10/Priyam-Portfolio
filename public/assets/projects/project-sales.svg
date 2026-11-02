@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B0E17"/>
+      <stop offset="100%" stop-color="#111625"/>
+    </linearGradient>
+    <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF8C00" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FF8C00" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Top Metric Banner -->
+  <g transform="translate(100, 80)">
+    <rect width="230" height="85" rx="12" fill="#141926" stroke="white" stroke-opacity="0.08"/>
+    <text x="20" y="30" fill="#64748B" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">GROSS REVENUE</text>
+    <text x="20" y="64" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">$2,297,201</text>
+
+    <g transform="translate(255, 0)">
+      <rect width="230" height="85" rx="12" fill="#141926" stroke="white" stroke-opacity="0.08"/>
+      <text x="20" y="30" fill="#64748B" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">NET PROFIT MARGIN</text>
+      <text x="20" y="64" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">12.47%</text>
+    </g>
+
+    <g transform="translate(510, 0)">
+      <rect width="230" height="85" rx="12" fill="#141926" stroke="white" stroke-opacity="0.08"/>
+      <text x="20" y="30" fill="#64748B" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">TOTAL ORDERS</text>
+      <text x="20" y="64" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">9,994 units</text>
+    </g>
+
+    <g transform="translate(765, 0)">
+      <rect width="235" height="85" rx="12" fill="#141926" stroke="white" stroke-opacity="0.08"/>
+      <text x="20" y="30" fill="#64748B" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1">AVG DISCOUNT</text>
+      <text x="20" y="64" fill="#F59E0B" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">15.6%</text>
+    </g>
+  </g>
+
+  <!-- Main Chart: Monthly Revenue Trend -->
+  <g transform="translate(100, 195)">
+    <rect width="660" height="380" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="28" y="36" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">MONTHLY COMMERCIAL REVENUE TRAJECTORY</text>
+
+    <!-- Trend line chart -->
+    <g transform="translate(50, 75)">
+      <line x1="0" y1="240" x2="560" y2="240" stroke="#334155" stroke-width="1"/>
+      <line x1="0" y1="160" x2="560" y2="160" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="0" y1="80" x2="560" y2="80" stroke="#334155" stroke-width="1" stroke-dasharray="3 3"/>
+
+      <!-- Area fill -->
+      <polygon points="0,200 50,180 100,190 150,140 200,160 250,110 300,130 350,90 400,110 450,70 500,50 550,30 550,240 0,240" fill="url(#areaGrad)"/>
+
+      <!-- Trend path -->
+      <path d="M 0 200 L 50 180 L 100 190 L 150 140 L 200 160 L 250 110 L 300 130 L 350 90 L 400 110 L 450 70 L 500 50 L 550 30" fill="none" stroke="#FF8C00" stroke-width="3"/>
+
+      <!-- Data dots -->
+      <circle cx="250" cy="110" r="4" fill="#FFFFFF"/>
+      <circle cx="450" cy="70" r="4" fill="#FFFFFF"/>
+      <circle cx="550" cy="30" r="5" fill="#34D399"/>
+    </g>
+  </g>
+
+  <!-- Right: Regional Distribution Matrix -->
+  <g transform="translate(790, 195)">
+    <rect width="310" height="380" rx="14" fill="#141926" stroke="white" stroke-opacity="0.08" stroke-width="1.5"/>
+    <text x="24" y="36" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12" font-weight="600" letter-spacing="1">REGIONAL BREAKDOWN</text>
+
+    <g transform="translate(24, 70)" font-family="Inter, sans-serif">
+      <text x="0" y="20" fill="#E2E8F0" font-size="12">West Region</text>
+      <text x="260" y="20" fill="#FF8C00" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="end">31.6% ($725K)</text>
+      <rect y="30" width="260" height="8" rx="4" fill="#1E293B"/>
+      <rect y="30" width="180" height="8" rx="4" fill="#FF8C00"/>
+
+      <g transform="translate(0, 60)">
+        <text x="0" y="20" fill="#E2E8F0" font-size="12">East Region</text>
+        <text x="260" y="20" fill="#38BDF8" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="end">29.5% ($678K)</text>
+        <rect y="30" width="260" height="8" rx="4" fill="#1E293B"/>
+        <rect y="30" width="165" height="8" rx="4" fill="#38BDF8"/>
+      </g>
+
+      <g transform="translate(0, 120)">
+        <text x="0" y="20" fill="#E2E8F0" font-size="12">Central Region</text>
+        <text x="260" y="20" fill="#818CF8" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="end">21.8% ($501K)</text>
+        <rect y="30" width="260" height="8" rx="4" fill="#1E293B"/>
+        <rect y="30" width="125" height="8" rx="4" fill="#818CF8"/>
+      </g>
+
+      <g transform="translate(0, 180)">
+        <text x="0" y="20" fill="#E2E8F0" font-size="12">South Region</text>
+        <text x="260" y="20" fill="#F43F5E" font-size="12" font-family="JetBrains Mono, monospace" text-anchor="end">17.1% ($391K)</text>
+        <rect y="30" width="260" height="8" rx="4" fill="#1E293B"/>
+        <rect y="30" width="95" height="8" rx="4" fill="#F43F5E"/>
+      </g>
+    </g>
+  </g>
+</svg>
