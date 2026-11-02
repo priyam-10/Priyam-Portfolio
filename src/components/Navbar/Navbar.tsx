@@ -67,7 +67,7 @@ export const Navbar = () => {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         <div className="flex items-center justify-between">
           {/* Logo Brand */}
           <a
@@ -154,7 +154,7 @@ export const Navbar = () => {
             transition={{ duration: 0.22 }}
             className="lg:hidden overflow-hidden bg-[#0D1018]/95 border-b border-[#222838] backdrop-blur-xl"
           >
-            <div className="max-w-7xl mx-auto px-4 pt-3 pb-5 flex flex-col gap-1">
+            <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 pt-3 pb-5 flex flex-col gap-1">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.substring(1);
                 return (

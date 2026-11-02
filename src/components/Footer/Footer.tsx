@@ -30,7 +30,7 @@ export const Footer = () => {
       {/* Background glow subtle aura */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#FF8C00]/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1C2230]">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
