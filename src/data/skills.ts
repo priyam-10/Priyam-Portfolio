@@ -3,20 +3,25 @@ import type { SkillCategory } from '../types';
 export const skillCategories: SkillCategory[] = [
   {
     title: 'Programming Languages',
+    description: 'Core scripting and query languages',
     skills: ['Python', 'SQL'],
   },
   {
-    title: 'Data Analysis and Manipulation',
+    title: 'Machine Learning',
+    description: 'Predictive modeling, algorithms and evaluation',
     skills: [
-      'Pandas',
-      'NumPy',
-      'Data Cleaning',
-      'Exploratory Data Analysis',
-      'Data Preprocessing',
+      'Scikit-learn',
+      'Regression',
+      'Classification',
+      'Clustering',
+      'Model Evaluation',
+      'Feature Scaling',
+      'Predictive Modeling',
     ],
   },
   {
-    title: 'Business Intelligence and Data Visualization',
+    title: 'Business Intelligence & Data Visualization',
+    description: 'Interactive dashboards, DAX metrics and visual storytelling',
     skills: [
       'Power BI',
       'Power Query',
@@ -29,7 +34,19 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    title: 'Data Analysis & Manipulation',
+    description: 'Data cleaning, transformation and exploratory analysis',
+    skills: [
+      'Pandas',
+      'NumPy',
+      'Data Cleaning',
+      'Exploratory Data Analysis',
+      'Data Preprocessing',
+    ],
+  },
+  {
     title: 'Statistics',
+    description: 'Quantitative inference and hypothesis testing',
     skills: [
       'Descriptive Statistics',
       'Probability',
@@ -38,24 +55,13 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: 'Machine Learning',
-    skills: [
-      'Scikit-learn',
-      'Regression',
-      'Classification',
-      'Clustering',
-      'Model Evaluation',
-      'Feature Scaling',
-      'Predictive Modeling',
-    ],
-  },
-  {
     title: 'Backend Development',
+    description: 'API services and analytical application deployment',
     skills: ['FastAPI', 'Streamlit', 'REST APIs'],
   },
   {
     title: 'Development Tools',
+    description: 'Version control and reproducible environments',
     skills: ['Jupyter Notebook', 'Git', 'GitHub'],
   },
 ];
-
