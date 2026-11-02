@@ -6,6 +6,7 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   centered?: boolean;
+  className?: string;
 }
 
 export const SectionHeading = ({
@@ -13,6 +14,7 @@ export const SectionHeading = ({
   title,
   subtitle,
   centered = true,
+  className = '',
 }: SectionHeadingProps) => {
   return (
     <motion.div
@@ -20,7 +22,7 @@ export const SectionHeading = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
-      className={`mb-12 md:mb-16 ${centered ? 'text-center' : 'text-left'}`}
+      className={`mb-10 sm:mb-12 ${centered ? 'text-center' : 'text-left'} ${className}`}
     >
       {badge && (
         <div
