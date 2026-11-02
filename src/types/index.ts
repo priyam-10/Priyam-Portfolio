@@ -18,6 +18,7 @@ export interface ProfileData {
 }
 
 export interface SkillCategory {
+  number?: string;
   title: string;
   description?: string;
   skills: string[];
