@@ -9,7 +9,6 @@ import {
   Cpu,
   FolderGit2,
   Briefcase,
-  TrendingUp,
 } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { Button } from '../../components/Buttons/Button';
@@ -33,26 +32,26 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-4rem)] pt-18 pb-4 lg:pt-20 lg:pb-5 flex flex-col justify-between overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] pt-18 sm:pt-20 pb-4 lg:pt-20 lg:pb-5 flex flex-col justify-between overflow-hidden"
     >
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 -left-36 w-80 h-80 bg-[#FF8C00]/8 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-36 w-80 h-80 bg-[#FF3D71]/8 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background ambient lighting in soft warm tones */}
+      <div className="absolute top-1/4 -left-36 w-80 h-80 bg-[#FF8C00]/6 rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-36 w-80 h-80 bg-[#FF3D71]/6 rounded-full blur-[110px] pointer-events-none" />
 
-      {/* Main Container */}
+      {/* Main Hero Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
         {/* Two-Column Hero Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center my-auto py-2 sm:py-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center my-auto py-2 sm:py-3">
           {/* Left Column: Information Layout & Typography */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-7 space-y-3.5 text-center lg:text-left"
+            className="lg:col-span-7 space-y-3.5 text-center lg:text-left z-10"
           >
             {/* Availability Indicator */}
             <motion.div variants={fadeInUp} className="inline-flex items-center">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#131622] border border-[#222838] text-slate-300">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#131622] border border-[#222838] text-slate-300 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>Available for Internships & Opportunities</span>
               </span>
@@ -156,112 +155,67 @@ export const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Editorial Portrait Composition with Data Workspace Atmosphere */}
+          {/* Right Column: Editorial Portrait with Architectural Backdrop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 flex items-center justify-center relative select-none"
+            className="lg:col-span-5 flex items-end justify-center lg:justify-end relative select-none"
           >
-            <div className="relative w-full max-w-[360px] sm:max-w-[400px] flex items-center justify-center">
-              {/* Soft Organic Background Shape in warm muted tones */}
-              <div className="absolute inset-0 m-auto w-[270px] h-[330px] sm:w-[320px] sm:h-[370px] lg:w-[340px] lg:h-[390px] rounded-[50%_50%_56%_44%/48%_52%_48%_52%] bg-gradient-to-tr from-[#1B161B] via-[#121522] to-[#111726] border border-white/[0.06] shadow-[0_0_60px_-10px_rgba(255,140,0,0.14)] -z-0" />
-
-              {/* Subtle Orbital Graph Ring */}
-              <svg
-                className="absolute inset-0 m-auto w-[330px] h-[330px] sm:w-[380px] sm:h-[380px] pointer-events-none opacity-20 -z-0"
-                viewBox="0 0 380 380"
-                fill="none"
-              >
-                <circle
-                  cx="190"
-                  cy="190"
-                  r="170"
-                  stroke="#FF8C00"
-                  strokeWidth="1"
-                  strokeDasharray="4 6"
-                />
-                <circle
-                  cx="190"
-                  cy="190"
-                  r="135"
-                  stroke="#FF3D71"
-                  strokeWidth="0.8"
-                  strokeDasharray="2 4"
-                />
-                <circle cx="355" cy="150" r="2.5" fill="#FF8C00" />
-                <circle cx="35" cy="220" r="2.5" fill="#FF3D71" />
-              </svg>
-
-              {/* Data Analytics Visual Badge 1: Top Right Metric */}
-              <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25, duration: 0.5 }}
-                className="absolute -top-1 right-1 sm:right-3 lg:-right-1 z-20 px-3 py-1.5 rounded-xl bg-[#121522]/90 backdrop-blur-md border border-white/[0.08] shadow-xl flex items-center gap-2"
-              >
-                <div className="w-6 h-6 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                  <TrendingUp className="w-3 h-3" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-none">
-                    Accuracy
-                  </p>
-                  <p className="text-xs font-bold text-white font-mono flex items-center gap-1 leading-none mt-0.5">
-                    <span>94.8%</span>
-                    <span className="text-[8px] text-emerald-400 font-normal">ROC</span>
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Data Analytics Visual Badge 2: Bottom Left Data Pipeline */}
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.5 }}
-                className="absolute bottom-4 -left-2 sm:left-2 lg:-left-2 z-20 px-3 py-1.5 rounded-xl bg-[#121522]/90 backdrop-blur-md border border-white/[0.08] shadow-xl flex items-center gap-2.5"
-              >
-                {/* Minimal SVG Bar Chart */}
-                <div className="flex items-end gap-1 h-5">
-                  <span className="w-1.5 h-2 rounded-sm bg-[#FF8C00]/40" />
-                  <span className="w-1.5 h-3.5 rounded-sm bg-[#FF8C00]/75" />
-                  <span className="w-1.5 h-5 rounded-sm bg-gradient-to-t from-[#FF8C00] to-[#FF3D71]" />
-                  <span className="w-1.5 h-3 rounded-sm bg-[#FF3D71]/60" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] uppercase tracking-wider text-slate-400 font-semibold leading-none">
-                    Analytics
-                  </p>
-                  <p className="text-xs font-bold text-white flex items-center gap-1 leading-none mt-0.5">
-                    <span>Live Pipeline</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Subtle Workspace Code Accent Pill */}
-              <div className="absolute -bottom-2 right-4 z-20 hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0E1119]/85 border border-white/[0.07] backdrop-blur-sm text-[10px] font-mono text-slate-400 shadow-md">
-                <span className="text-[#FF8C00]">df</span>.insights() <span className="text-emerald-400">✓</span>
+            <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px] flex items-end justify-center">
+              {/* Single Cohesive Architectural Arch Backdrop */}
+              <div className="absolute inset-x-0 bottom-0 mx-auto w-[280px] sm:w-[320px] lg:w-[350px] h-[370px] sm:h-[420px] lg:h-[450px] rounded-t-[175px] rounded-b-2xl bg-gradient-to-b from-[#1C1822] via-[#141622] to-[#0E1119] border border-white/[0.07] shadow-[0_20px_50px_-15px_rgba(255,140,0,0.1)] -z-0 overflow-hidden">
+                {/* Subtle Integrated Analytical Geometry (Low-contrast, behind portrait) */}
+                <svg
+                  className="absolute inset-0 w-full h-full opacity-[0.14] pointer-events-none"
+                  viewBox="0 0 350 450"
+                  fill="none"
+                >
+                  <defs>
+                    <linearGradient id="archGridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#FF8C00" stopOpacity="0.8" />
+                      <stop offset="60%" stopColor="#FF3D71" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  {/* Architectural grid lines */}
+                  <line x1="88" y1="50" x2="88" y2="450" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  <line x1="175" y1="30" x2="175" y2="450" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  <line x1="262" y1="50" x2="262" y2="450" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  <line x1="30" y1="150" x2="320" y2="150" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  <line x1="30" y1="260" x2="320" y2="260" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  <line x1="30" y1="370" x2="320" y2="370" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 4" />
+                  {/* Restrained analytical trajectory line */}
+                  <path
+                    d="M 50 360 C 110 330, 150 250, 220 220 S 280 150, 310 110"
+                    stroke="url(#archGridGrad)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                  />
+                  {/* Subtle coordinate data nodes */}
+                  <circle cx="175" cy="242" r="2.5" fill="#FF8C00" opacity="0.6" />
+                  <circle cx="262" cy="172" r="2.5" fill="#FF3D71" opacity="0.6" />
+                </svg>
               </div>
 
-              {/* Priyam's Original Transparent Portrait (Dominant Central Subject) */}
+              {/* Foreground Subject: Authentic Transparent PNG Portrait */}
               <img
                 src="/assets/profile/profile.png"
                 alt="Priyam Singh - Data Analyst and Machine Learning Engineer"
-                className="relative z-10 max-h-[300px] sm:max-h-[340px] lg:max-h-[370px] xl:max-h-[390px] w-auto object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] pointer-events-none filter contrast-[1.02]"
+                className="relative z-10 max-h-[340px] sm:max-h-[390px] lg:max-h-[430px] xl:max-h-[450px] w-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)]"
               />
             </div>
           </motion.div>
         </div>
 
-        {/* Separate Elegant Information Strip at the Bottom of the Hero */}
+        {/* Highlight Strip Forming the Bottom Edge of the Hero (Overlapping lower portrait on desktop) */}
         <motion.div
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          className="mt-4 pt-3 pb-1"
+          className="relative z-20 w-full mt-4 lg:-mt-8 xl:-mt-10 pb-1"
         >
-          <div className="w-full rounded-2xl bg-[#10131D]/80 border border-white/[0.08] backdrop-blur-md shadow-lg shadow-black/25 p-2 sm:p-2.5">
+          <div className="w-full rounded-2xl bg-[#0E111A]/90 border border-white/[0.08] backdrop-blur-md shadow-2xl shadow-black/40 p-2 sm:p-2.5">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
               {profileData.highlightCards.map((card) => {
                 const IconComponent = iconMap[card.icon] || Cpu;
@@ -270,7 +224,7 @@ export const Hero = () => {
                     key={card.title}
                     className="flex items-center gap-3 py-2 px-3 sm:px-4 hover:bg-white/[0.02] transition-colors rounded-xl"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#181D2A] border border-[#252E40] flex items-center justify-center text-[#FF8C00] shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#161B26] border border-[#242C3E] flex items-center justify-center text-[#FF8C00] shrink-0">
                       <IconComponent className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
