@@ -127,3 +127,4 @@ To connect the contact form to your own email via **Formspree**:
 
 © 2026 Priyam Singh. All Rights Reserved.  
 Original certificates and photographs are property of Priyam Singh.
+

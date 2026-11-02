@@ -82,3 +82,4 @@ export const CertificateCard = ({ certificate, onOpenModal }: CertificateCardPro
     </motion.article>
   );
 };
+

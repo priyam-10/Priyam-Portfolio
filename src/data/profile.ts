@@ -17,7 +17,7 @@ export const profileData: ProfileData = {
     'Data Science',
   ],
   introduction:
-    'I am Priyam Singh, a Computer Science undergraduate with a focus on Data Analytics and Machine Learning. I work with Python, SQL, Power BI, and data visualization to analyze datasets, identify patterns, and develop insightful dashboards. I enjoy solving analytical problems, exploring data, and building practical solutions that support informed decision-making. I am continuously strengthening my technical expertise through hands-on projects and industry experience.',
+    'I am a Computer Science undergraduate specializing in Data Analytics and Machine Learning. I use Python, SQL, and Power BI to transform data into meaningful insights, build analytical solutions, and support data-driven decision-making.',
   aboutContent: [
     'I am Priyam Singh, a Computer Science undergraduate focused on Data Analytics, Machine Learning, and Business Intelligence. I have a strong interest in working with data, developing predictive models, and applying analytical techniques to solve real-world problems.',
     'My technical experience includes Python, SQL, Pandas, NumPy, Power BI, and Scikit-learn. I work across data preprocessing, exploratory data analysis, statistical analysis, data visualization, and machine learning techniques such as regression and classification.',
@@ -27,7 +27,7 @@ export const profileData: ProfileData = {
   highlightCards: [
     {
       title: '3rd Year',
-      subtitle: 'B.Tech / B.E. Computer Science',
+      subtitle: 'B.E. Computer Science',
       icon: 'GraduationCap',
     },
     {

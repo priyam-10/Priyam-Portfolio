@@ -214,3 +214,4 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     </AnimatePresence>
   );
 };
+

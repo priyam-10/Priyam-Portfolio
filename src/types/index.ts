@@ -67,3 +67,4 @@ export interface CertificationItem {
   credentialUrl?: string;
   topics?: string[];
 }
+

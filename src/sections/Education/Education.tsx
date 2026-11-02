@@ -102,3 +102,4 @@ export const Education = () => {
     </section>
   );
 };
+

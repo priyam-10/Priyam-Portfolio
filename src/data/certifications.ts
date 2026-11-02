@@ -58,3 +58,4 @@ export const certificationsData: CertificationItem[] = [
     topics: ['Data Analytics', 'Business Case Analysis', 'Problem Solving'],
   },
 ];
+

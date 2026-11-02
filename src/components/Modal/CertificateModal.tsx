@@ -138,3 +138,4 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
     </AnimatePresence>
   );
 };
+

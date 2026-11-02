@@ -58,3 +58,4 @@ export const skillCategories: SkillCategory[] = [
     skills: ['Jupyter Notebook', 'Git', 'GitHub'],
   },
 ];
+
