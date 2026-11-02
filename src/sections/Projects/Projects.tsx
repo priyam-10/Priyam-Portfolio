@@ -11,13 +11,11 @@ export const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
-  // Categories present across the verified projects
+  // Exactly 5 category filters as specified
   const filterCategories = [
     { label: 'All', value: 'All' },
     { label: 'Machine Learning', value: 'Machine Learning' },
     { label: 'Data Analytics', value: 'Data Analytics' },
-    { label: 'Business Intelligence', value: 'Business Intelligence' },
-    { label: 'Exploratory Data Analysis', value: 'Exploratory Data Analysis' },
     { label: 'Artificial Intelligence', value: 'Artificial Intelligence' },
     { label: 'Hackathon', value: 'Hackathon' },
   ];
@@ -45,13 +43,13 @@ export const Projects = () => {
 
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
         <SectionHeading
-          badge="Portfolio Gallery"
-          title="Selected Projects"
-          subtitle="Practical applications of data analytics, machine learning, and intelligent technologies."
+          badge="Featured Engineering"
+          title="Projects & Practical Work"
+          subtitle="Real-world applications of data analytics, machine learning, and intelligent technologies."
           className="mb-8 sm:mb-10 lg:mb-12"
         />
 
-        {/* Category Filter Pills */}
+        {/* Category Filter Pills (Exactly 5 filters) */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8 sm:mb-10">
           {filterCategories.map((tab) => {
             const count = categoryCounts[tab.value] || 0;
@@ -83,7 +81,7 @@ export const Projects = () => {
           })}
         </div>
 
-        {/* Responsive 3-Column Modern Editorial Gallery Grid */}
+        {/* Clean 3-Column Modern Portfolio Gallery Grid (3 on desktop, 2 on tablet, 1 on mobile) */}
         <motion.div
           layout
           variants={staggerContainer}
@@ -105,7 +103,7 @@ export const Projects = () => {
         {/* Gallery Baseline Note */}
         <div className="mt-12 text-center">
           <p className="text-xs text-slate-500 font-mono">
-            Showing {displayedProjects.length} of {projectsData.length} verified projects with open source repositories
+            Displaying {displayedProjects.length} of {projectsData.length} verified projects with open source repositories
           </p>
         </div>
       </div>

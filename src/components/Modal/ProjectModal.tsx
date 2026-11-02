@@ -9,6 +9,8 @@ import {
   Workflow,
   Sparkles,
   AlertCircle,
+  Database,
+  ImageIcon,
 } from 'lucide-react';
 import type { ProjectItem } from '../../types';
 import { backdropVariants, modalVariants } from '../../lib/animations';
@@ -92,15 +94,14 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
             {/* Scrollable Modal Content */}
             <div className="overflow-y-auto p-5 sm:p-6 md:p-8 space-y-6">
-              {/* Project Image Banner */}
+              {/* Primary Project Image Banner */}
               {project.image && (
-                <div className="relative rounded-xl overflow-hidden border border-white/[0.07] bg-[#0E1017] aspect-video max-h-72 w-full">
+                <div className="relative rounded-xl overflow-hidden border border-white/[0.07] bg-[#0E1017] aspect-video max-h-80 w-full">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#10131E] via-transparent to-transparent opacity-30" />
                 </div>
               )}
 
@@ -115,17 +116,32 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </div>
 
               {/* Problem Statement */}
-              <div className="p-4 rounded-xl bg-[#141824] border border-white/[0.06]">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#FF8C00] flex items-center gap-2 mb-2">
-                  <AlertCircle className="w-4 h-4 shrink-0" />
-                  <span>Problem Statement</span>
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {project.problemStatement}
-                </p>
-              </div>
+              {project.problemStatement && (
+                <div className="p-4 rounded-xl bg-[#141824] border border-white/[0.06]">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#FF8C00] flex items-center gap-2 mb-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>Problem Statement</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {project.problemStatement}
+                  </p>
+                </div>
+              )}
 
-              {/* Objectives (if available) */}
+              {/* Dataset or Input Information */}
+              {project.datasetInfo && (
+                <div className="p-4 rounded-xl bg-[#141824] border border-white/[0.06]">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#38BDF8] flex items-center gap-2 mb-2">
+                    <Database className="w-4 h-4 shrink-0" />
+                    <span>Dataset &amp; Input Attributes</span>
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    {project.datasetInfo}
+                  </p>
+                </div>
+              )}
+
+              {/* Project Objectives */}
               {project.objectives && project.objectives.length > 0 && (
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
@@ -143,12 +159,12 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
               )}
 
-              {/* Approach & Workflow (if available) */}
+              {/* Methodology & Technical Workflow */}
               {project.approach && project.approach.length > 0 && (
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
                     <Workflow className="w-4 h-4 text-[#38BDF8] shrink-0" />
-                    <span>Methodology & Technical Approach</span>
+                    <span>Methodology &amp; Technical Approach</span>
                   </h4>
                   <ul className="space-y-2">
                     {project.approach.map((step, i) => (
@@ -161,28 +177,54 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
               )}
 
-              {/* Key Features & Implementation */}
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Key Implementation Details</span>
-                </h4>
-                <ul className="space-y-2">
-                  {project.keyImplementation.map((point, index) => (
-                    <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {/* Key Implementation Features */}
+              {project.keyImplementation && project.keyImplementation.length > 0 && (
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Key Features &amp; Implementation</span>
+                  </h4>
+                  <ul className="space-y-2">
+                    {project.keyImplementation.map((point, index) => (
+                      <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-              {/* Verified Results & Outcomes */}
+              {/* Additional Visuals (e.g. UIDAI Hackathon Charts) */}
+              {project.additionalImages && project.additionalImages.length > 0 && (
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
+                    <ImageIcon className="w-4 h-4 text-[#FF8C00] shrink-0" />
+                    <span>Visual Analysis Charts from Repository</span>
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {project.additionalImages.map((imgSrc, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-xl overflow-hidden border border-white/[0.07] bg-[#0E1017] aspect-video"
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`${project.title} visualization ${idx + 1}`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Verified Results & Findings */}
               {project.metricsOrOutcomes && project.metricsOrOutcomes.length > 0 && (
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-[#FF8C00] shrink-0" />
-                    <span>Verified Outcomes & Insights</span>
+                    <span>Verified Outcomes &amp; Insights</span>
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                     {project.metricsOrOutcomes.map((metric, idx) => (
@@ -197,7 +239,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </div>
               )}
 
-              {/* Full Verified Technology Stack */}
+              {/* Verified Technology Stack */}
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">
                   Verified Technology Stack
@@ -222,7 +264,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 onClick={onClose}
                 className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white hover:bg-white/[0.05] transition-colors cursor-pointer"
               >
-                Close Window
+                Close Details
               </button>
 
               <div className="flex items-center gap-3">

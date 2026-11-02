@@ -27,16 +27,18 @@ export interface SkillCategory {
 export interface ProjectItem {
   id: string;
   title: string;
-  category: 'Machine Learning' | 'Data Analytics' | 'Business Intelligence' | 'Exploratory Data Analysis' | 'Artificial Intelligence' | 'Hackathon';
+  category: 'Machine Learning' | 'Data Analytics' | 'Artificial Intelligence' | 'Hackathon';
   shortDescription: string;
   problemStatement: string;
   objectives?: string[];
+  datasetInfo?: string;
   keyImplementation: string[];
   approach?: string[];
   technologies: string[];
   githubUrl: string;
   liveDemoUrl?: string;
   image?: string;
+  additionalImages?: string[];
   featured: boolean;
   metricsOrOutcomes?: string[];
 }
