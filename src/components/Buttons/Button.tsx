@@ -46,17 +46,17 @@ export const Button = ({
 
   const variantClasses = {
     primary:
-      'bg-gradient-to-r from-[#F28C28] via-[#E06D28] to-[#A83250] hover:from-[#FF9D32] hover:via-[#F28C28] hover:to-[#BD3D5E] text-white shadow-lg shadow-orange-950/40 hover:shadow-[#F28C28]/25 border border-[#F28C28]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
+      'bg-gradient-to-r from-[#721C35] via-[#8C2342] to-[#481426] dark:from-[#F28C28] dark:via-[#E06D28] dark:to-[#A83250] hover:from-[#8C2342] hover:via-[#721C35] hover:to-[#5E1A30] dark:hover:from-[#FF9D32] dark:hover:via-[#F28C28] dark:hover:to-[#BD3D5E] text-white shadow-md shadow-[#721C35]/20 dark:shadow-orange-950/40 hover:shadow-[#721C35]/30 dark:hover:shadow-[#F28C28]/25 border border-[#721C35]/30 dark:border-[#F28C28]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     secondary:
-      'bg-[#17151B] text-slate-200 hover:text-white hover:bg-[#221C28] border border-white/[0.08] hover:border-[#A83250]/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
+      'bg-[#FFFFFF] dark:bg-[#17151B] text-[#29231F] dark:text-slate-200 hover:text-[#481426] dark:hover:text-white hover:bg-[#FAF6EE] dark:hover:bg-[#221C28] border border-[#E2D7C5] dark:border-white/[0.08] hover:border-[#721C35]/40 dark:hover:border-[#A83250]/50 shadow-sm dark:shadow-none hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     outline:
-      'bg-transparent text-slate-200 hover:text-white border border-white/[0.12] hover:border-[#F28C28]/60 hover:bg-[#F28C28]/10 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
+      'bg-transparent text-[#721C35] dark:text-slate-200 hover:text-[#481426] dark:hover:text-white border border-[#721C35]/35 dark:border-white/[0.12] hover:border-[#721C35] dark:hover:border-[#F28C28]/60 hover:bg-[#721C35]/8 dark:hover:bg-[#F28C28]/10 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     ghost:
-      'bg-transparent text-slate-400 hover:text-white hover:bg-white/5 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
+      'bg-transparent text-[#5C524A] dark:text-slate-400 hover:text-[#29231F] dark:hover:text-white hover:bg-[#29231F]/5 dark:hover:bg-white/5 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
   };
 
   const baseClasses = cn(
-    'inline-flex items-center justify-center transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F28C28] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B10] disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none',
+    'inline-flex items-center justify-center transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#721C35] dark:focus-visible:ring-[#F28C28] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F8F4ED] dark:focus-visible:ring-offset-[#0B0B10] disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none',
     sizeClasses[size],
     variantClasses[variant],
     className

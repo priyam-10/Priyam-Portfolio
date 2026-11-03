@@ -12,9 +12,10 @@ import { CustomCursor } from './components/CustomCursor/CustomCursor';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#0B0B10] bg-tech-grid text-[#EDEDF2] flex flex-col selection:bg-[#F28C28]/25 selection:text-white overflow-x-hidden">
-      {/* Precision technical blueprint background grid */}
-      <div className="fixed inset-0 bg-tech-grid pointer-events-none z-0" />
+    <div className="relative min-h-screen bg-[#F8F4ED] dark:bg-[#0B0B10] text-[#29231F] dark:text-[#EDEDF2] flex flex-col selection:bg-[#721C35]/15 dark:selection:bg-[#F28C28]/25 selection:text-[#481426] dark:selection:text-white overflow-x-hidden">
+      {/* Precision technical blueprint background grid (smooth cross-fade between themes) */}
+      <div className="fixed inset-0 bg-tech-grid-dark pointer-events-none z-0" />
+      <div className="fixed inset-0 bg-tech-grid-light pointer-events-none z-0" />
 
       {/* Desktop Custom Cursor */}
       <CustomCursor />

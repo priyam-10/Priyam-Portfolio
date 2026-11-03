@@ -34,11 +34,12 @@ export const Hero = () => {
       id="home"
       className="relative min-h-[calc(100vh-4.5rem)] pt-20 sm:pt-22 pb-4 lg:pb-6 flex flex-col justify-between overflow-hidden"
     >
-      {/* Technical blueprint architectural grid for Hero section */}
-      <div className="absolute inset-0 bg-tech-grid-dense pointer-events-none -z-0 opacity-80" />
+      {/* Technical blueprint architectural grid for Hero section (smooth dual cross-fade) */}
+      <div className="absolute inset-0 bg-tech-grid-dense-dark pointer-events-none -z-0" />
+      <div className="absolute inset-0 bg-tech-grid-dense-light pointer-events-none -z-0" />
 
-      {/* Subtle ambient lighting in Burnt Orange */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#F28C28]/6 rounded-full blur-[140px] pointer-events-none" />
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#721C35]/5 dark:bg-[#F28C28]/6 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Main Hero Container */}
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 w-full flex-1 flex flex-col justify-between">
@@ -53,8 +54,8 @@ export const Hero = () => {
           >
             {/* 1. Availability Indicator */}
             <motion.div variants={fadeInUp} className="inline-flex items-center">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#17151B] border border-white/[0.08] text-slate-200 shadow-sm shadow-[#481426]/20">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFFFFF] dark:bg-[#17151B] border border-[#E2D7C5] dark:border-white/[0.08] text-[#29231F] dark:text-slate-200 shadow-sm shadow-[#721C35]/5 dark:shadow-[#481426]/20">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Available for Internships & Opportunities</span>
               </span>
             </motion.div>
@@ -62,11 +63,11 @@ export const Hero = () => {
             {/* 2. Refined Greeting & Name with Animated Underline */}
             <motion.div variants={fadeInUp} className="space-y-2">
               <div className="flex items-center justify-center lg:justify-start gap-2 flex-wrap">
-                <span className="text-sm sm:text-base lg:text-lg font-medium text-[#EDEDF2] tracking-tight">
+                <span className="text-sm sm:text-base lg:text-lg font-medium text-[#5C524A] dark:text-[#EDEDF2] tracking-tight">
                   Hi, I'm
                 </span>
                 <span className="relative inline-block font-extrabold text-xl sm:text-2xl lg:text-3xl tracking-tight">
-                  <span className="bg-gradient-to-r from-[#FF9D32] via-[#F28C28] to-[#FFB45C] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[#721C35] via-[#A83250] to-[#721C35] dark:from-[#FF9D32] dark:via-[#F28C28] dark:to-[#FFB45C] bg-clip-text text-transparent">
                     {profileData.name}
                   </span>
                   {/* Subtle animated underline stroke */}
@@ -74,19 +75,19 @@ export const Hero = () => {
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#F28C28] via-[#A83250] to-[#721C35] rounded-full origin-left"
+                    className="absolute -bottom-1 left-0 right-0 h-[2.5px] bg-gradient-to-r from-[#721C35] via-[#A83250] to-[#481426] dark:from-[#F28C28] dark:via-[#A83250] dark:to-[#721C35] rounded-full origin-left"
                   />
                 </span>
               </div>
 
               {/* 3. Main Headline */}
-              <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] 2xl:text-[52px] font-black text-white tracking-tight leading-[1.14]">
+              <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] 2xl:text-[52px] font-black text-[#29231F] dark:text-white tracking-tight leading-[1.14]">
                 Turning Data into <br className="hidden sm:inline" />
                 <span className="text-gradient">Actionable Insights</span>
               </h1>
 
               {/* 4. Professional Title */}
-              <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[#F28C28] pt-0.5 tracking-tight">
+              <p className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-[#721C35] dark:text-[#F28C28] pt-0.5 tracking-tight">
                 {profileData.professionalTitle}
               </p>
             </motion.div>
@@ -94,7 +95,7 @@ export const Hero = () => {
             {/* 5. Concise Professional Description */}
             <motion.p
               variants={fadeInUp}
-              className="text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal"
+              className="text-xs sm:text-sm lg:text-[15px] xl:text-[16px] text-[#5C524A] dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal"
             >
               {profileData.introduction}
             </motion.p>
@@ -118,8 +119,8 @@ export const Hero = () => {
                 variant="outline"
                 size="md"
                 onClick={() => handleScroll('contact')}
-                leftIcon={<Mail className="w-3.5 h-3.5 text-[#F28C28]" />}
-                className="px-4.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-xl hover:border-[#F28C28]"
+                leftIcon={<Mail className="w-3.5 h-3.5 text-[#721C35] dark:text-[#F28C28]" />}
+                className="px-4.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-xl"
               >
                 Get in Touch
               </Button>
@@ -141,17 +142,17 @@ export const Hero = () => {
               variants={fadeInUp}
               className="pt-2 flex items-center justify-center lg:justify-start gap-3 text-xs"
             >
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#7E7267] dark:text-slate-400">
                 Connect
               </span>
-              <div className="h-3 w-px bg-white/[0.1]" />
+              <div className="h-3 w-px bg-[#E2D7C5] dark:bg-white/[0.1]" />
               <div className="flex items-center gap-2">
                 <a
                   href={profileData.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
-                  className="p-2 rounded-xl bg-[#17151B] border border-white/[0.08] text-slate-300 hover:text-white hover:border-[#F28C28] hover:bg-[#F28C28]/10 transition-all shadow-sm"
+                  className="p-2 rounded-xl bg-[#FFFFFF] dark:bg-[#17151B] border border-[#E2D7C5] dark:border-white/[0.08] text-[#5C524A] dark:text-slate-300 hover:text-[#721C35] dark:hover:text-white hover:border-[#721C35] dark:hover:border-[#F28C28] hover:bg-[#721C35]/5 dark:hover:bg-[#F28C28]/10 transition-all shadow-sm"
                 >
                   <Github className="w-3.5 h-3.5" />
                 </a>
@@ -160,14 +161,14 @@ export const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
-                  className="p-2 rounded-xl bg-[#17151B] border border-white/[0.08] text-slate-300 hover:text-[#38BDF8] hover:border-[#38BDF8] hover:bg-[#38BDF8]/10 transition-all shadow-sm"
+                  className="p-2 rounded-xl bg-[#FFFFFF] dark:bg-[#17151B] border border-[#E2D7C5] dark:border-white/[0.08] text-[#5C524A] dark:text-slate-300 hover:text-[#0A66C2] dark:hover:text-[#38BDF8] hover:border-[#0A66C2] dark:hover:border-[#38BDF8] hover:bg-[#0A66C2]/5 dark:hover:bg-[#38BDF8]/10 transition-all shadow-sm"
                 >
                   <Linkedin className="w-3.5 h-3.5" />
                 </a>
                 <a
                   href={`mailto:${profileData.email}`}
                   aria-label="Direct Email"
-                  className="p-2 rounded-xl bg-[#17151B] border border-white/[0.08] text-slate-300 hover:text-[#A83250] hover:border-[#A83250] hover:bg-[#A83250]/10 transition-all shadow-sm"
+                  className="p-2 rounded-xl bg-[#FFFFFF] dark:bg-[#17151B] border border-[#E2D7C5] dark:border-white/[0.08] text-[#5C524A] dark:text-slate-300 hover:text-[#721C35] dark:hover:text-[#A83250] hover:border-[#721C35] dark:hover:border-[#A83250] hover:bg-[#721C35]/5 dark:hover:bg-[#A83250]/10 transition-all shadow-sm"
                 >
                   <Mail className="w-3.5 h-3.5" />
                 </a>
@@ -183,24 +184,24 @@ export const Hero = () => {
             className="lg:col-span-5 xl:col-span-5 flex items-end justify-center lg:justify-end relative select-none lg:mb-[-28px] xl:mb-[-34px]"
           >
             <div className="relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[460px] xl:max-w-[500px] flex items-end justify-center">
-              {/* Layer 1: Ambient Backdrop Glow with subtle warm light */}
-              <div className="absolute inset-0 m-auto w-[280px] sm:w-[350px] lg:w-[400px] h-[340px] sm:h-[400px] lg:h-[460px] bg-gradient-to-tr from-[#F28C28]/10 via-[#F28C28]/4 to-transparent rounded-full blur-[70px] pointer-events-none -z-10" />
+              {/* Layer 1: Ambient Backdrop Glow */}
+              <div className="absolute inset-0 m-auto w-[280px] sm:w-[350px] lg:w-[400px] h-[340px] sm:h-[400px] lg:h-[460px] bg-gradient-to-tr from-[#721C35]/10 dark:from-[#F28C28]/10 via-[#721C35]/4 dark:via-[#F28C28]/4 to-transparent rounded-full blur-[70px] pointer-events-none -z-10" />
 
               {/* Layer 2: Outer Sculptural Form (The Architectural Canvas) */}
-              <div className="absolute inset-x-0 bottom-0 mx-auto w-[290px] sm:w-[350px] lg:w-[390px] xl:w-[430px] h-[380px] sm:h-[440px] lg:h-[480px] xl:h-[510px] rounded-t-[200px] rounded-br-[130px] rounded-bl-[45px] bg-gradient-to-b from-[#1C1A22]/95 via-[#141318]/90 to-[#0B0B10]/95 border border-white/[0.08] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] -z-0 overflow-hidden flex items-center justify-center">
+              <div className="absolute inset-x-0 bottom-0 mx-auto w-[290px] sm:w-[350px] lg:w-[390px] xl:w-[430px] h-[380px] sm:h-[440px] lg:h-[480px] xl:h-[510px] rounded-t-[200px] rounded-br-[130px] rounded-bl-[45px] bg-gradient-to-b from-[#EAE1D2]/95 via-[#F2EAE0]/90 to-[#F8F4ED]/95 dark:from-[#1C1A22]/95 dark:via-[#141318]/90 dark:to-[#0B0B10]/95 border border-[#DCCDB7] dark:border-white/[0.08] shadow-[0_20px_50px_-15px_rgba(72,20,38,0.12)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] -z-0 overflow-hidden flex items-center justify-center">
                 {/* Layer 3: Inner Sculptural Tonal Layer */}
-                <div className="w-[90%] h-[92%] rounded-t-[180px] rounded-br-[115px] rounded-bl-[35px] bg-gradient-to-tr from-[#17151B] via-[#0E0E14] to-[#1C1622]/80 border border-white/[0.04] relative overflow-hidden">
+                <div className="w-[90%] h-[92%] rounded-t-[180px] rounded-br-[115px] rounded-bl-[35px] bg-gradient-to-tr from-[#FAF6EE] via-[#F4EDE2] to-[#EAE1D2]/80 dark:from-[#17151B] dark:via-[#0E0E14] dark:to-[#1C1622]/80 border border-[#E2D7C5]/60 dark:border-white/[0.04] relative overflow-hidden">
                   {/* Layer 4: Integrated Abstract Analytical Data Lines */}
                   <svg
-                    className="absolute inset-0 w-full h-full opacity-[0.18] pointer-events-none"
+                    className="absolute inset-0 w-full h-full opacity-[0.22] dark:opacity-[0.18] pointer-events-none"
                     viewBox="0 0 420 510"
                     fill="none"
                   >
                     <defs>
                       <linearGradient id="flowCurveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#F28C28" stopOpacity="0.8" />
+                        <stop offset="0%" stopColor="#721C35" className="dark:stop-color-[#F28C28]" stopOpacity="0.8" />
                         <stop offset="50%" stopColor="#A83250" stopOpacity="0.6" />
-                        <stop offset="100%" stopColor="#721C35" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#481426" className="dark:stop-color-[#721C35]" stopOpacity="0.3" />
                       </linearGradient>
                     </defs>
                     {/* Flowing predictive spline curves */}
@@ -218,16 +219,16 @@ export const Hero = () => {
                       strokeLinecap="round"
                     />
                     {/* Subtle analytical grid axes */}
-                    <line x1="105" y1="50" x2="105" y2="490" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
-                    <line x1="210" y1="30" x2="210" y2="490" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
-                    <line x1="315" y1="60" x2="315" y2="490" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
-                    <line x1="30" y1="150" x2="390" y2="150" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
-                    <line x1="30" y1="280" x2="390" y2="280" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
-                    <line x1="30" y1="410" x2="390" y2="410" stroke="#FFFFFF" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="105" y1="50" x2="105" y2="490" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="210" y1="30" x2="210" y2="490" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="315" y1="60" x2="315" y2="490" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="30" y1="150" x2="390" y2="150" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="30" y1="280" x2="390" y2="280" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
+                    <line x1="30" y1="410" x2="390" y2="410" stroke="#721C35" strokeOpacity="0.3" strokeWidth="0.75" strokeDasharray="3 5" />
                     {/* Data coordinate nodes */}
-                    <circle cx="260" cy="230" r="3" fill="#F28C28" opacity="0.8" />
+                    <circle cx="260" cy="230" r="3" fill="#721C35" opacity="0.8" />
                     <circle cx="315" cy="180" r="2.5" fill="#A83250" opacity="0.7" />
-                    <circle cx="210" cy="270" r="2.5" fill="#38BDF8" opacity="0.6" />
+                    <circle cx="210" cy="270" r="2.5" fill="#29231F" opacity="0.5" />
                   </svg>
                 </div>
               </div>
@@ -243,7 +244,7 @@ export const Hero = () => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="relative z-10 max-h-[340px] sm:max-h-[400px] lg:max-h-[440px] xl:max-h-[480px] w-auto object-contain select-none pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
+                  className="relative z-10 max-h-[340px] sm:max-h-[400px] lg:max-h-[440px] xl:max-h-[480px] w-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_30px_rgba(72,20,38,0.18)] dark:drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
                 />
               </picture>
             </div>
@@ -257,23 +258,23 @@ export const Hero = () => {
           animate="visible"
           className="relative z-20 w-full mt-4 sm:mt-5 lg:mt-3 pb-2"
         >
-          <div className="w-full rounded-2xl bg-[#111116]/95 border border-white/[0.08] backdrop-blur-xl shadow-2xl shadow-black/50 p-2 sm:p-2.5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.07]">
+          <div className="w-full rounded-2xl bg-[#FAF6EE]/95 dark:bg-[#111116]/95 border border-[#E2D7C5] dark:border-white/[0.08] backdrop-blur-xl shadow-lg shadow-[#721C35]/5 dark:shadow-2xl dark:shadow-black/50 p-2 sm:p-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#E2D7C5] dark:divide-white/[0.07]">
               {profileData.highlightCards.map((card) => {
                 const IconComponent = iconMap[card.icon] || Cpu;
                 return (
                   <div
                     key={card.title}
-                    className="flex items-center gap-3 py-2 px-3 sm:px-4 xl:px-5 hover:bg-white/[0.02] transition-colors rounded-xl min-w-0"
+                    className="flex items-center gap-3 py-2 px-3 sm:px-4 xl:px-5 hover:bg-[#EAE1D2]/40 dark:hover:bg-white/[0.02] transition-colors rounded-xl min-w-0"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#17151B] border border-[#24222B] flex items-center justify-center text-[#F28C28] shrink-0 shadow-sm shadow-[#481426]/20">
+                    <div className="w-8 h-8 rounded-lg bg-[#FFFFFF] dark:bg-[#17151B] border border-[#E2D7C5] dark:border-[#24222B] flex items-center justify-center text-[#721C35] dark:text-[#F28C28] shrink-0 shadow-sm shadow-[#721C35]/5 dark:shadow-[#481426]/20">
                       <IconComponent className="w-4 h-4" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-xs sm:text-[13px] xl:text-sm font-bold text-white tracking-tight leading-tight">
+                      <h3 className="text-xs sm:text-[13px] xl:text-sm font-bold text-[#29231F] dark:text-white tracking-tight leading-tight">
                         {card.title}
                       </h3>
-                      <p className="text-[11px] xl:text-xs text-slate-400 font-medium leading-tight mt-0.5">
+                      <p className="text-[11px] xl:text-xs text-[#5C524A] dark:text-slate-400 font-medium leading-tight mt-0.5">
                         {card.subtitle}
                       </p>
                     </div>
