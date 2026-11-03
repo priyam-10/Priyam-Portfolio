@@ -38,6 +38,7 @@ export interface ProjectItem {
   githubUrl: string;
   liveDemoUrl?: string;
   image?: string;
+  thumbnail?: string;
   additionalImages?: string[];
   featured: boolean;
   metricsOrOutcomes?: string[];
@@ -74,6 +75,7 @@ export interface CertificationItem {
   issuer: string;
   completionDate?: string;
   image: string;
+  thumbnail?: string;
   credentialUrl?: string;
   topics?: string[];
 }

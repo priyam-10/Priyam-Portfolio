@@ -6,7 +6,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Data Analytics',
     issuer: 'Unstop',
     completionDate: '2026',
-    image: '/assets/certificates/unstop-data-analytics.jpg',
+    image: '/assets/certificates/unstop-data-analytics.webp',
+    thumbnail: '/assets/certificates/unstop-data-analytics-thumb.webp',
     topics: ['Data Analytics', 'Business Case Analysis', 'Problem Solving'],
   },
   {
@@ -14,7 +15,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Learning SQL Programming',
     issuer: 'LinkedIn Learning',
     completionDate: 'July 2026',
-    image: '/assets/certificates/sql-learning.jpg',
+    image: '/assets/certificates/sql-learning.webp',
+    thumbnail: '/assets/certificates/sql-learning-thumb.webp',
     topics: ['SQL Queries', 'Relational Databases', 'Data Manipulation'],
   },
   {
@@ -22,7 +24,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'GenAI Powered Data Analytics Job Simulation',
     issuer: 'Tata / Forage',
     completionDate: 'May 2026',
-    image: '/assets/certificates/tata-genai-analytics.jpg',
+    image: '/assets/certificates/tata-genai-analytics.webp',
+    thumbnail: '/assets/certificates/tata-genai-analytics-thumb.webp',
     topics: ['Generative AI', 'Data Analytics', 'Insight Communication'],
   },
   {
@@ -30,7 +33,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
     issuer: 'Oracle University',
     completionDate: '2025',
-    image: '/assets/certificates/oracle-ai-foundations.jpg',
+    image: '/assets/certificates/oracle-ai-foundations.webp',
+    thumbnail: '/assets/certificates/oracle-ai-foundations-thumb.webp',
     topics: ['Artificial Intelligence', 'OCI Foundations', 'Machine Learning Concepts'],
   },
   {
@@ -38,7 +42,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Data Analytics Job Simulation',
     issuer: 'Deloitte / Forage',
     completionDate: 'June 2026',
-    image: '/assets/certificates/deloitte-data-analytics.png',
+    image: '/assets/certificates/deloitte-data-analytics.webp',
+    thumbnail: '/assets/certificates/deloitte-data-analytics-thumb.webp',
     topics: ['Data Analysis', 'Client Communication', 'Dashboard Insights'],
   },
   {
@@ -46,7 +51,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Exploratory Data Analysis with Python & SQL',
     issuer: 'Analytics Vidhya',
     completionDate: '2026',
-    image: '/assets/certificates/analytics-vidhya.jpg',
+    image: '/assets/certificates/analytics-vidhya.webp',
+    thumbnail: '/assets/certificates/analytics-vidhya-thumb.webp',
     topics: ['Exploratory Data Analysis', 'Python & SQL', 'Data Visualization'],
   },
   {
@@ -54,7 +60,8 @@ export const certificationsData: CertificationItem[] = [
     title: 'Pandas Essential Training',
     issuer: 'LinkedIn Learning',
     completionDate: '2026',
-    image: '/assets/certificates/pandas-training.jpg',
+    image: '/assets/certificates/pandas-training.webp',
+    thumbnail: '/assets/certificates/pandas-training-thumb.webp',
     topics: ['Data Wrangling', 'Pandas DataFrames', 'Data Cleaning'],
   },
 ];

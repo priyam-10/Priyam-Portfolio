@@ -25,9 +25,12 @@ export const CertificateCard = ({ certificate, onOpenModal }: CertificateCardPro
           title={`Click to preview certificate: ${certificate.title}`}
         >
           <img
-            src={certificate.image}
+            src={certificate.thumbnail || certificate.image}
             alt={certificate.title}
+            width={640}
+            height={440}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-contain rounded transition-transform duration-500 ease-out group-hover/img:scale-[1.03]"
           />
           <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/30 transition-colors flex items-center justify-center">

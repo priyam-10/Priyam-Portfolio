@@ -32,7 +32,8 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Python', 'Scikit-learn', 'Streamlit', 'Pandas', 'NumPy'],
     githubUrl: 'https://github.com/priyam-10/heart-disease-prediction-ml',
     liveDemoUrl: 'https://cardio-monitor-ml.streamlit.app',
-    image: '/assets/projects/new-project-images/heart-disease.png',
+    image: '/assets/projects/new-project-images/heart-disease.webp',
+    thumbnail: '/assets/projects/new-project-images/heart-disease-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       '86.96% test accuracy with Logistic Regression classifier',
@@ -72,7 +73,8 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Python', 'Pandas', 'Seaborn', 'Matplotlib', 'Streamlit'],
     githubUrl: 'https://github.com/priyam-10/Marketing-Funnel-Lead-Conversion-Analysis',
     liveDemoUrl: 'https://marketing-funnel-lead-conversion-analysis.streamlit.app/',
-    image: '/assets/projects/new-project-images/marketing-funnel.png',
+    image: '/assets/projects/new-project-images/marketing-funnel.webp',
+    thumbnail: '/assets/projects/new-project-images/marketing-funnel-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       'Comprehensive EDA across 45,211 marketing campaign records',
@@ -112,7 +114,8 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
     githubUrl: 'https://github.com/priyam-10/Business-Sales-Performance-Analytics',
     liveDemoUrl: 'https://business-sales-performance-analytics.streamlit.app',
-    image: '/assets/projects/new-project-images/business-sales.png',
+    image: '/assets/projects/new-project-images/business-sales.webp',
+    thumbnail: '/assets/projects/new-project-images/business-sales-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       'Identified Technology as the strongest sales and profit-generating category',
@@ -151,7 +154,8 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Power BI', 'DAX', 'Power Query', 'Python'],
     githubUrl: 'https://github.com/priyam-10/Customer-Retention-Churn-Analysis-Dashboard',
     liveDemoUrl: 'https://customer-retention-churn-analysis-dashboard.streamlit.app/',
-    image: '/assets/projects/new-project-images/customer-retention.png',
+    image: '/assets/projects/new-project-images/customer-retention.webp',
+    thumbnail: '/assets/projects/new-project-images/customer-retention-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       'Analyzed 7,043 customer accounts with 26.58% baseline churn rate',
@@ -190,7 +194,8 @@ export const projectsData: ProjectItem[] = [
     ],
     technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
     githubUrl: 'https://github.com/priyam-10/movie-data-analysis',
-    image: '/assets/projects/new-project-images/movie-analysis.png',
+    image: '/assets/projects/new-project-images/movie-analysis.webp',
+    thumbnail: '/assets/projects/new-project-images/movie-analysis-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       'Exploratory data analysis across 9,827 movie records',
@@ -229,7 +234,8 @@ export const projectsData: ProjectItem[] = [
     technologies: ['Python', 'Streamlit', 'Google Gemini AI', 'dotenv'],
     githubUrl: 'https://github.com/priyam-10/PostCraft-AI',
     liveDemoUrl: 'https://postcraft-ai-studio.streamlit.app/',
-    image: '/assets/projects/new-project-images/postcraft-ai.png',
+    image: '/assets/projects/new-project-images/postcraft-ai.webp',
+    thumbnail: '/assets/projects/new-project-images/postcraft-ai-thumb.webp',
     featured: true,
     metricsOrOutcomes: [
       'Automated LinkedIn content generation powered by Google Gemini AI',
@@ -266,10 +272,11 @@ export const projectsData: ProjectItem[] = [
     ],
     technologies: ['Python', 'Pandas', 'Matplotlib'],
     githubUrl: 'https://github.com/priyam-10/Leaving-No-One-Behind-UIDAI-Hackathon-2026',
-    image: '/assets/projects/new-project-images/uidai-analytics.png',
+    image: '/assets/projects/new-project-images/uidai-analytics.webp',
+    thumbnail: '/assets/projects/new-project-images/uidai-analytics-thumb.webp',
     additionalImages: [
-      '/assets/projects/uidai-age-group.png',
-      '/assets/projects/uidai-bottom-10.png',
+      '/assets/projects/uidai-age-group.webp',
+      '/assets/projects/uidai-bottom-10.webp',
     ],
     featured: true,
     metricsOrOutcomes: [

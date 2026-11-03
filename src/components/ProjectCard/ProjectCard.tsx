@@ -19,11 +19,14 @@ export const ProjectCard = ({ project, onOpenModal }: ProjectCardProps) => {
 
       {/* 1. Genuine Project Screenshot / Visualization (16:9 Aspect Ratio) */}
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0B0B10] border-b border-white/[0.06]">
-        {project.image ? (
+        {project.thumbnail || project.image ? (
           <img
-            src={project.image}
+            src={project.thumbnail || project.image}
             alt={`${project.title} visualization`}
+            width={800}
+            height={450}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
           />
         ) : (

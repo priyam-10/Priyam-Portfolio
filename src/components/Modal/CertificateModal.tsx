@@ -82,6 +82,8 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
                 <img
                   src={certificate.image}
                   alt={certificate.title}
+                  loading="eager"
+                  decoding="async"
                   className="max-h-[58vh] w-auto max-w-full object-contain rounded-lg shadow-lg"
                 />
               </div>

@@ -232,12 +232,20 @@ export const Hero = () => {
                 </div>
               </div>
 
-              {/* Layer 5: Foreground Subject — Authentic Transparent PNG Portrait */}
-              <img
-                src="/assets/profile/profile.png"
-                alt="Priyam Singh - Data Analyst and Machine Learning Engineer"
-                className="relative z-10 max-h-[340px] sm:max-h-[400px] lg:max-h-[440px] xl:max-h-[480px] w-auto object-contain select-none pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
-              />
+              {/* Layer 5: Foreground Subject — Authentic Portrait with Modern WebP & High Fetch Priority */}
+              <picture className="relative z-10 contents">
+                <source srcSet="/assets/profile/profile.webp" type="image/webp" />
+                <img
+                  src="/assets/profile/profile.png"
+                  alt="Priyam Singh - Data Analyst and Machine Learning Engineer"
+                  width={838}
+                  height={1024}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="relative z-10 max-h-[340px] sm:max-h-[400px] lg:max-h-[440px] xl:max-h-[480px] w-auto object-contain select-none pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]"
+                />
+              </picture>
             </div>
           </motion.div>
         </div>

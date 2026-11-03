@@ -100,6 +100,10 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width={1672}
+                    height={941}
+                    loading="eager"
+                    decoding="async"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -211,6 +215,8 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         <img
                           src={imgSrc}
                           alt={`${project.title} visualization ${idx + 1}`}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-contain"
                         />
                       </div>
