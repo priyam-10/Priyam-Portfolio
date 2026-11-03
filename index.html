@@ -1,9 +1,23 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth dark" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Immediate theme initialization: defaults strictly to dark theme on first preview -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('priyam_portfolio_theme');
+          var theme = (saved === 'light') ? 'light' : 'dark';
+          document.documentElement.classList.remove('dark', 'light');
+          document.documentElement.classList.add(theme);
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
+        } catch (e) {}
+      })();
+    </script>
     
     <!-- Primary SEO Meta Tags -->
     <title>Priyam Singh | Data Analyst & Machine Learning Engineer</title>
@@ -11,7 +25,7 @@
     <meta name="description" content="Explore the portfolio of Priyam Singh, a Computer Science undergraduate specializing in Data Analytics and Machine Learning, featuring projects, technical skills and professional experience." />
     <meta name="keywords" content="Priyam Singh, Data Analyst, Machine Learning Engineer, Portfolio, Python, SQL, Power BI, Scikit-learn, Streamlit, Bhopal, SIRTE" />
     <meta name="author" content="Priyam Singh" />
-    <meta name="theme-color" content="#0B0D13" />
+    <meta name="theme-color" content="#0B0B10" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website" />
@@ -34,9 +48,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#0B0D13] text-slate-100 font-sans selection:bg-[#FF8C00]/30 selection:text-white antialiased overflow-x-hidden min-h-screen">
+  <body class="bg-[#F8F4ED] dark:bg-[#0B0B10] text-[#29231F] dark:text-[#EDEDF2] font-sans antialiased overflow-x-hidden min-h-screen transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
