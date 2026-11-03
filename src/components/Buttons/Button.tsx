@@ -39,24 +39,24 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const sizeClasses = {
-    sm: 'px-3.5 py-1.5 text-xs font-medium rounded-lg gap-1.5',
+    sm: 'px-3.5 py-1.5 text-xs font-semibold rounded-lg gap-1.5',
     md: 'px-5 py-2.5 text-sm font-semibold rounded-xl gap-2',
     lg: 'px-6 py-3.5 text-base font-semibold rounded-xl gap-2.5',
   };
 
   const variantClasses = {
     primary:
-      'bg-gradient-to-r from-[#FF8C00] via-[#FF6A4D] to-[#FF3D71] text-white shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:brightness-110 active:scale-[0.98] border border-orange-400/30',
+      'bg-gradient-to-r from-[#F28C28] via-[#E06D28] to-[#A83250] hover:from-[#FF9D32] hover:via-[#F28C28] hover:to-[#BD3D5E] text-white shadow-lg shadow-orange-950/40 hover:shadow-[#F28C28]/25 border border-[#F28C28]/40 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     secondary:
-      'bg-[#181C28] text-slate-200 hover:text-white hover:bg-[#202636] border border-[#2B3244] hover:border-slate-600 active:scale-[0.98]',
+      'bg-[#17151B] text-slate-200 hover:text-white hover:bg-[#221C28] border border-white/[0.08] hover:border-[#A83250]/50 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     outline:
-      'bg-transparent text-slate-200 hover:text-white border border-[#2B3244] hover:border-[#FF8C00] hover:bg-[#FF8C00]/5 active:scale-[0.98]',
+      'bg-transparent text-slate-200 hover:text-white border border-white/[0.12] hover:border-[#F28C28]/60 hover:bg-[#F28C28]/10 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
     ghost:
-      'bg-transparent text-slate-400 hover:text-white hover:bg-white/5 active:scale-[0.98]',
+      'bg-transparent text-slate-400 hover:text-white hover:bg-white/5 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
   };
 
   const baseClasses = cn(
-    'inline-flex items-center justify-center transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8C00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0D13] disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none',
+    'inline-flex items-center justify-center transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F28C28] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B10] disabled:opacity-60 disabled:cursor-not-allowed disabled:pointer-events-none',
     sizeClasses[size],
     variantClasses[variant],
     className
@@ -97,4 +97,3 @@ export const Button = ({
     </motion.button>
   );
 };
-

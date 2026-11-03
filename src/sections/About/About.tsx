@@ -33,8 +33,7 @@ export const About = () => {
   return (
     <section id="about" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-[#FF8C00]/4 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-48 w-96 h-96 bg-[#FF3D71]/4 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 -right-48 w-96 h-96 bg-[#F28C28]/4 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Main Container */}
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
@@ -68,7 +67,7 @@ export const About = () => {
               analytical techniques to solve real-world problems.
             </motion.p>
 
-            {/* Paragraph 2 — Consistent, readable body text color with no random highlighting */}
+            {/* Paragraph 2 — Consistent, readable body text color */}
             <motion.p
               variants={fadeInUp}
               className="text-[15px] sm:text-base text-slate-300 leading-[1.75] font-normal"
@@ -102,17 +101,17 @@ export const About = () => {
               intelligent technologies.
             </motion.p>
 
-            {/* Core Career Interests (Refined, understated tags) */}
-            <motion.div variants={fadeInUp} className="pt-4 sm:pt-5 border-t border-white/[0.06]">
+            {/* Core Career Interests */}
+            <motion.div variants={fadeInUp} className="pt-4 sm:pt-5 border-t border-white/[0.08]">
               <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
-                <Target className="w-3.5 h-3.5 text-[#FF8C00]" />
+                <Target className="w-3.5 h-3.5 text-[#F28C28]" />
                 <span>Core Career Interests</span>
               </h4>
               <div className="flex flex-wrap gap-2">
                 {profileData.careerInterests.map((interest) => (
                   <span
                     key={interest}
-                    className="px-3 py-1 rounded-md text-xs font-medium bg-[#121520] text-slate-300 border border-white/[0.06] hover:text-white hover:border-slate-600 transition-colors"
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-[#17151B] text-slate-300 border border-white/[0.08] hover:text-white hover:border-[#F28C28]/40 hover:bg-[#F28C28]/5 transition-all shadow-sm"
                   >
                     {interest}
                   </span>
@@ -131,16 +130,16 @@ export const About = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="rounded-2xl bg-[#10131E]/80 border border-white/[0.07] backdrop-blur-md shadow-lg shadow-black/25 p-5 sm:p-6"
+              className="rounded-2xl bg-[#111116]/95 border border-white/[0.08] hover:border-[#A83250]/40 backdrop-blur-md shadow-xl shadow-black/35 p-5 sm:p-6 transition-all duration-300 group"
             >
               {/* Part A: Academic Information */}
               <div className="pb-4">
                 <div className="flex items-start justify-between gap-3 mb-1.5">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#FF8C00]">
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#F28C28]">
                     <GraduationCap className="w-3.5 h-3.5" />
                     <span>Academic Foundation</span>
                   </span>
-                  <span className="text-xs font-bold text-white font-mono bg-[#161B27] border border-[#242C3E] px-2 py-0.5 rounded shrink-0">
+                  <span className="text-xs font-bold text-white font-mono bg-[#17151B] border border-white/[0.08] px-2.5 py-0.5 rounded-md shrink-0 shadow-sm shadow-[#481426]/20">
                     8.0 <span className="text-[10px] text-slate-400 font-normal">/ 10 CGPA</span>
                   </span>
                 </div>
@@ -154,13 +153,13 @@ export const About = () => {
 
                 {/* Location detail */}
                 <div className="mt-3 pt-3 border-t border-white/[0.06] flex items-center gap-2 text-xs text-slate-400">
-                  <MapPin className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 text-[#A83250] shrink-0" />
                   <span>Bhopal, Madhya Pradesh, India</span>
                 </div>
               </div>
 
               {/* Part B: Professional Focus Areas */}
-              <div className="pt-4 border-t border-white/[0.07]">
+              <div className="pt-4 border-t border-white/[0.08]">
                 <h4 className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-3">
                   Professional Focus Areas
                 </h4>
@@ -171,9 +170,9 @@ export const About = () => {
                     return (
                       <div
                         key={idx}
-                        className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-white/[0.08] transition-colors"
+                        className="flex items-start gap-3 p-3 rounded-xl bg-[#17151B]/80 border border-white/[0.06] hover:border-[#F28C28]/30 hover:bg-[#17151B] transition-all group/item"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-[#161B27] border border-[#242C3E] flex items-center justify-center text-[#FF8C00] shrink-0 mt-0.5">
+                        <div className="w-8 h-8 rounded-lg bg-[#221620] border border-[#721C35]/30 flex items-center justify-center text-[#F28C28] shrink-0 mt-0.5 group-hover/item:border-[#F28C28]/40 transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div className="min-w-0 flex-1">

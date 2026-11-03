@@ -124,8 +124,7 @@ export const Skills = () => {
   return (
     <section id="skills" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#FF8C00]/4 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#FF3D71]/4 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#F28C28]/4 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
         <SectionHeading
@@ -157,21 +156,21 @@ export const Skills = () => {
                   tabIndex={0}
                   onClick={() => setActiveIndex(idx)}
                   onKeyDown={(e) => handleKeyDown(e, idx)}
-                  className={`group relative text-left w-full shrink-0 lg:shrink flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl border transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#FF8C00] select-none snap-start ${
+                  className={`group relative text-left w-full shrink-0 lg:shrink flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl border transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#F28C28] select-none snap-start ${
                     isActive
-                      ? 'bg-[#151926] border-[#FF8C00]/40 text-white shadow-md shadow-black/20'
-                      : 'bg-[#10131E]/60 border-white/[0.05] text-slate-400 hover:text-slate-200 hover:bg-[#131622] hover:border-white/[0.1]'
+                      ? 'bg-[#1E1420] border-[#F28C28]/45 text-white shadow-md shadow-[#481426]/30'
+                      : 'bg-[#111116]/80 border-white/[0.06] text-slate-400 hover:text-slate-200 hover:bg-[#17151B] hover:border-white/[0.1]'
                   }`}
                 >
                   {/* Subtle active indicator bar */}
                   {isActive && (
-                    <span className="hidden lg:block absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-[#FF8C00] to-[#FF3D71] rounded-r" />
+                    <span className="hidden lg:block absolute left-0 top-2 bottom-2 w-1 bg-gradient-to-b from-[#F28C28] to-[#A83250] rounded-r" />
                   )}
 
                   <div className="flex items-center gap-3 min-w-0">
                     <span
                       className={`font-mono text-xs font-bold transition-colors ${
-                        isActive ? 'text-[#FF8C00]' : 'text-slate-500 group-hover:text-slate-400'
+                        isActive ? 'text-[#FF9D32]' : 'text-slate-500 group-hover:text-slate-400'
                       }`}
                     >
                       {category.number}
@@ -180,8 +179,8 @@ export const Skills = () => {
                     <div
                       className={`w-7 h-7 rounded-lg flex items-center justify-center transition-colors shrink-0 ${
                         isActive
-                          ? 'bg-[#FF8C00]/15 text-[#FF8C00] border border-[#FF8C00]/30'
-                          : 'bg-[#161A26] text-slate-400 border border-white/[0.05] group-hover:text-slate-300'
+                          ? 'bg-[#481426]/60 text-[#FF9D32] border border-[#F28C28]/40'
+                          : 'bg-[#17151B] text-slate-400 border border-white/[0.06] group-hover:text-slate-300'
                       }`}
                     >
                       <Icon className="w-3.5 h-3.5" />
@@ -200,7 +199,7 @@ export const Skills = () => {
                     <span
                       className={`text-[11px] font-mono px-2 py-0.5 rounded transition-colors ${
                         isActive
-                          ? 'bg-white/[0.08] text-slate-300 border border-white/[0.08]'
+                          ? 'bg-white/[0.08] text-slate-200 border border-white/[0.08]'
                           : 'bg-white/[0.03] text-slate-500 border border-white/[0.03]'
                       }`}
                     >
@@ -209,7 +208,7 @@ export const Skills = () => {
                     <ChevronRight
                       className={`w-3.5 h-3.5 transition-transform ${
                         isActive
-                          ? 'text-[#FF8C00] translate-x-0.5'
+                          ? 'text-[#F28C28] translate-x-0.5'
                           : 'text-slate-600 opacity-0 group-hover:opacity-100'
                       }`}
                     />
@@ -221,9 +220,9 @@ export const Skills = () => {
 
           {/* RIGHT SIDE — Skills Display */}
           <div className="lg:col-span-7 xl:col-span-8 min-h-[360px] sm:min-h-[380px] lg:min-h-[420px]">
-            <div className="relative rounded-2xl bg-[#10131E]/85 border border-white/[0.08] backdrop-blur-md p-6 sm:p-8 lg:p-9 shadow-xl shadow-black/25 overflow-hidden flex flex-col justify-between min-h-full">
+            <div className="relative rounded-2xl bg-[#111116]/95 border border-white/[0.08] backdrop-blur-md p-6 sm:p-8 lg:p-9 shadow-2xl shadow-black/35 overflow-hidden flex flex-col justify-between min-h-full">
               {/* Subtle top ambient glow */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF8C00]/4 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[#F28C28]/4 rounded-full blur-3xl pointer-events-none" />
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -239,9 +238,9 @@ export const Skills = () => {
                 >
                   <div>
                     {/* Panel Header */}
-                    <div className="flex items-start justify-between gap-4 pb-5 border-b border-white/[0.07]">
+                    <div className="flex items-start justify-between gap-4 pb-5 border-b border-white/[0.08]">
                       <div>
-                        <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#FF8C00] mb-1.5">
+                        <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-[#FF9D32] mb-1.5">
                           <span>Category {activeCategory.number}</span>
                           <span className="text-slate-600">/</span>
                           <span className="text-slate-400 font-normal">
@@ -272,7 +271,7 @@ export const Skills = () => {
                     <div className="pt-6">
                       <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
                         <span>Tools, Frameworks & Methodologies</span>
-                        <span className="h-px flex-1 bg-white/[0.05]" />
+                        <span className="h-px flex-1 bg-white/[0.06]" />
                       </h4>
 
                       <motion.div
@@ -287,9 +286,9 @@ export const Skills = () => {
                             <motion.div
                               key={skill}
                               variants={fadeInUp}
-                              className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-[#141824] text-slate-200 border border-white/[0.07] hover:border-white/[0.18] hover:bg-[#181D2C] hover:text-white transition-all duration-200 group/tag shadow-sm select-none"
+                              className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-[#17151B] text-slate-200 border border-white/[0.08] hover:border-[#F28C28]/40 hover:bg-[#201826] hover:text-white hover:-translate-y-0.5 transition-all duration-200 group/tag shadow-sm select-none"
                             >
-                              <div className="w-5 h-5 rounded-md bg-[#1B2130] border border-white/[0.06] flex items-center justify-center text-slate-400 group-hover/tag:text-[#FF8C00] group-hover/tag:border-[#FF8C00]/30 transition-colors shrink-0">
+                              <div className="w-5 h-5 rounded-md bg-[#221620] border border-[#721C35]/30 flex items-center justify-center text-slate-400 group-hover/tag:text-[#FF9D32] group-hover/tag:border-[#F28C28]/40 transition-colors shrink-0">
                                 <SkillIcon className="w-3 h-3" />
                               </div>
                               <span className="text-xs sm:text-sm font-medium tracking-tight">
@@ -303,9 +302,9 @@ export const Skills = () => {
                   </div>
 
                   {/* Panel Footer Context */}
-                  <div className="mt-8 pt-4 border-t border-white/[0.05] flex items-center justify-between text-xs text-slate-500 font-mono">
+                  <div className="mt-8 pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-500 font-mono">
                     <span className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28]" />
                       <span>Category {activeCategory.number} of 07</span>
                     </span>
                     <span className="text-slate-400">Technical Expertise Map</span>

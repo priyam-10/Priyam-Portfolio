@@ -26,12 +26,12 @@ export const SectionHeading = ({
     >
       {badge && (
         <div
-          className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 border border-[#FF8C00]/30 bg-[#FF8C00]/10 text-[#FF8C00] ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 border border-[#F28C28]/35 bg-[#481426]/35 text-[#FF9D32] shadow-sm shadow-[#481426]/30 ${
             centered ? 'mx-auto' : ''
           }`}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00] animate-pulse" />
-          {badge}
+          <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28] animate-pulse" />
+          <span>{badge}</span>
         </div>
       )}
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
@@ -43,11 +43,10 @@ export const SectionHeading = ({
         </p>
       )}
       <div
-        className={`mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#FF8C00] via-[#FF6A4D] to-[#FF3D71] ${
+        className={`mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#F28C28] via-[#A83250] to-[#721C35] ${
           centered ? 'mx-auto' : ''
         }`}
       />
     </motion.div>
   );
 };
-

@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Calendar, Award } from 'lucide-react';
 import type { CertificationItem } from '../../types';
-import { Button } from '../Buttons/Button';
 import { backdropVariants, modalVariants } from '../../lib/animations';
 
 interface CertificateModalProps {
@@ -33,7 +32,7 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
     <AnimatePresence>
       {certificate && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-cert-title"
@@ -48,19 +47,21 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
             className="fixed inset-0 bg-black/85 backdrop-blur-md"
           />
 
-          {/* Modal Content */}
+          {/* Modal Container */}
           <motion.div
             variants={modalVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="relative w-full max-w-4xl my-6 bg-[#121520] border border-[#262C3E] rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col"
+            className="relative w-full max-w-4xl my-6 bg-[#111116] border border-white/[0.09] rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#202535] bg-[#161B28]">
+            <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-white/[0.07] bg-[#17151B]">
               <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-[#FF8C00]" />
-                <span className="text-sm font-semibold text-slate-200">
+                <span className="p-1.5 rounded-lg bg-[#481426]/30 text-[#FF9D32] border border-[#F28C28]/35">
+                  <Award className="w-4 h-4" />
+                </span>
+                <span className="text-xs sm:text-sm font-semibold text-slate-200">
                   {certificate.issuer}
                 </span>
               </div>
@@ -68,15 +69,16 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
                 type="button"
                 onClick={onClose}
                 aria-label="Close certificate preview"
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF8C00]"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#F28C28] cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Certificate Preview Image */}
+            {/* Scrollable Content */}
             <div className="overflow-y-auto p-4 sm:p-6 space-y-4">
-              <div className="relative rounded-xl overflow-hidden border border-[#252C3D] bg-[#0A0D14] flex items-center justify-center max-h-[60vh]">
+              {/* Certificate Image Preview */}
+              <div className="relative rounded-xl overflow-hidden border border-white/[0.08] bg-[#0B0B10] flex items-center justify-center p-2 sm:p-3 max-h-[62vh]">
                 <img
                   src={certificate.image}
                   alt={certificate.title}
@@ -84,9 +86,9 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
                 />
               </div>
 
-              {/* Title & Info */}
+              {/* Title & Metadata */}
               <div className="pt-2">
-                <h3 id="modal-cert-title" className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 id="modal-cert-title" className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug">
                   {certificate.title}
                 </h3>
                 <div className="mt-2 flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400">
@@ -95,18 +97,18 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
                   </span>
                   {certificate.completionDate && (
                     <span className="inline-flex items-center gap-1.5 text-slate-400">
-                      <Calendar className="w-3.5 h-3.5 text-[#FF8C00]" />
-                      Completed: {certificate.completionDate}
+                      <Calendar className="w-3.5 h-3.5 text-[#F28C28]" />
+                      Date: {certificate.completionDate}
                     </span>
                   )}
                 </div>
 
-                {certificate.topics && (
-                  <div className="mt-3 flex flex-wrap gap-2">
+                {certificate.topics && certificate.topics.length > 0 && (
+                  <div className="mt-3.5 flex flex-wrap gap-1.5">
                     {certificate.topics.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 text-xs font-medium rounded-md bg-[#181D2B] text-slate-300 border border-[#252D40]"
+                        className="px-2.5 py-1 text-xs font-medium rounded-lg bg-[#17151B] text-slate-300 border border-white/[0.06]"
                       >
                         {t}
                       </span>
@@ -117,20 +119,23 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
             </div>
 
             {/* Footer */}
-            <div className="p-4 sm:p-5 border-t border-[#202535] bg-[#161B28] flex items-center justify-between">
-              <Button variant="ghost" size="sm" onClick={onClose}>
-                Close
-              </Button>
-              <Button
+            <div className="p-4 sm:p-5 border-t border-white/[0.07] bg-[#17151B] flex items-center justify-between gap-3">
+              <button
+                type="button"
+                onClick={onClose}
+                className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-[#1E1420] hover:bg-[#251828] border border-white/[0.08] transition-all cursor-pointer"
+              >
+                Close Preview
+              </button>
+              <a
                 href={certificate.image}
                 target="_blank"
                 rel="noopener noreferrer"
-                variant="outline"
-                size="sm"
-                rightIcon={<ExternalLink className="w-4 h-4" />}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#F28C28] via-[#E06D28] to-[#A83250] hover:from-[#FF9D32] hover:to-[#B83858] shadow-md shadow-orange-950/40 transition-all"
               >
-                Open Full Resolution
-              </Button>
+                <span>Open Full Resolution</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </motion.div>
         </div>
@@ -138,4 +143,3 @@ export const CertificateModal = ({ certificate, onClose }: CertificateModalProps
     </AnimatePresence>
   );
 };
-

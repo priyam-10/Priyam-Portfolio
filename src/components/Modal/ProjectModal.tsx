@@ -67,12 +67,12 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="relative w-full max-w-3xl my-6 bg-[#10131E] border border-white/[0.09] rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
+            className="relative w-full max-w-3xl my-6 bg-[#111116] border border-white/[0.09] rounded-2xl shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
           >
             {/* Header with Close */}
-            <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-white/[0.07] bg-[#141824]">
+            <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-white/[0.07] bg-[#17151B]">
               <div className="flex items-center gap-2.5">
-                <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#FF8C00]/15 text-[#FF8C00] border border-[#FF8C00]/30">
+                <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-[#481426]/40 text-[#FF9D32] border border-[#F28C28]/35">
                   {project.category}
                 </span>
                 {project.liveDemoUrl && (
@@ -86,7 +86,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 type="button"
                 onClick={onClose}
                 aria-label="Close project details"
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF8C00] cursor-pointer"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#F28C28] cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -258,7 +258,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
 
             {/* Footer with Actions */}
-            <div className="p-4 sm:p-5 border-t border-white/[0.07] bg-[#141824] flex flex-wrap items-center justify-between gap-3">
+            <div className="p-4 sm:p-5 border-t border-white/[0.07] bg-[#17151B] flex flex-wrap items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={onClose}
@@ -272,7 +272,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-[#1A2030] hover:bg-[#20273B] hover:text-white border border-white/[0.08] transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-200 bg-[#221824] hover:bg-[#2A1E2C] hover:text-white border border-white/[0.08] transition-all"
                 >
                   <Github className="w-4 h-4" />
                   <span>View Repository</span>
@@ -283,9 +283,9 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     href={project.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#FF8C00] to-[#FF3D71] hover:from-[#FFA02E] hover:to-[#FF5483] shadow-md shadow-orange-500/20 transition-all"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#F28C28] to-[#A83250] hover:from-[#FF9D32] hover:to-[#BD3D5E] shadow-md shadow-orange-950/40 transition-all"
                   >
-                    <span>Launch Live Demo</span>
+                    <span>Live Demo</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}

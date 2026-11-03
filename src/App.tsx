@@ -8,15 +8,22 @@ import { Experience } from './sections/Experience/Experience';
 import { Education } from './sections/Education/Education';
 import { Certifications } from './sections/Certifications/Certifications';
 import { Contact } from './sections/Contact/Contact';
+import { CustomCursor } from './components/CustomCursor/CustomCursor';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#0B0D13] text-slate-100 flex flex-col">
+    <div className="relative min-h-screen bg-[#0B0B10] bg-tech-grid text-[#EDEDF2] flex flex-col selection:bg-[#F28C28]/25 selection:text-white overflow-x-hidden">
+      {/* Precision technical blueprint background grid */}
+      <div className="fixed inset-0 bg-tech-grid pointer-events-none z-0" />
+
+      {/* Desktop Custom Cursor */}
+      <CustomCursor />
+
       {/* Global Navigation */}
       <Navbar />
 
       {/* Main Single-Page Sections (Exactly 8 in approved order) */}
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         {/* 1. Home / Hero */}
         <Hero />
 
@@ -49,4 +56,3 @@ function App() {
 }
 
 export default App;
-

@@ -54,6 +54,7 @@ export interface ExperienceItem {
 
 export interface EducationItem {
   id: string;
+  typeLabel: string;
   degree: string;
   institution: string;
   location: string;
@@ -61,6 +62,9 @@ export interface EducationItem {
   status: string;
   scoreLabel: string;
   scoreValue: string;
+  stream?: string;
+  focusAreas?: string[];
+  highlights?: string[];
   details?: string[];
 }
 

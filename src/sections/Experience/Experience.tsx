@@ -1,95 +1,90 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { Calendar, Building2, Check } from 'lucide-react';
 import { experienceData } from '../../data/experience';
 import { SectionHeading } from '../../components/SectionHeading/SectionHeading';
 import { fadeInUp, staggerContainer } from '../../lib/animations';
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20 lg:py-28 relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/3 -right-48 w-80 h-80 bg-[#F28C28]/4 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           badge="Work History"
           title="Professional Experience"
-          subtitle="Practical industry experience delivering analytics, data insights, and AI-assisted research."
+          subtitle="Building practical experience through data analytics, problem-solving, and AI-assisted research."
+          className="mb-10 sm:mb-12 lg:mb-14"
         />
 
+        {/* Editorial Experience Cards Grid (2 equal columns on desktop, stacked on mobile/tablet) */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
-          className="relative border-l-2 border-[#202535] ml-4 md:ml-32 space-y-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch"
         >
-          {experienceData.map((exp, idx) => (
-            <motion.div
+          {experienceData.map((exp) => (
+            <motion.article
               key={exp.id}
               variants={fadeInUp}
-              className="relative pl-8 md:pl-10 group"
+              className="relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-[#111116]/95 border border-white/[0.08] hover:border-[#F28C28]/40 hover:bg-[#17151B] transition-all duration-300 shadow-xl shadow-black/30 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-black/45 group overflow-hidden h-full"
             >
-              {/* Timeline dot */}
-              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-[#121520] border-2 border-[#FF8C00] group-hover:bg-[#FF8C00] group-hover:scale-125 transition-all duration-300" />
+              {/* Restrained top-edge highlight bar */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#F28C28] via-[#A83250] to-[#721C35] opacity-85 group-hover:opacity-100 transition-opacity duration-300" />
 
-              {/* Date tag for large screens (placed on left) */}
-              <div className="hidden md:block absolute -left-36 top-1 text-right w-28">
-                <span className="text-xs font-mono font-semibold text-[#FF8C00]">
-                  {exp.duration}
-                </span>
-              </div>
-
-              {/* Card Container */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-[#121520] border border-[#202535] group-hover:border-[#FF8C00]/40 group-hover:shadow-xl group-hover:shadow-orange-500/5 transition-all duration-300">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="p-1.5 rounded-lg bg-[#181D2A] border border-[#252D40] text-[#FF8C00]">
-                      <Briefcase className="w-4 h-4" />
-                    </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                      {exp.position}
-                    </h3>
+              <div>
+                {/* 1. Date label at the top & Remote status */}
+                <div className="flex flex-wrap items-center justify-between gap-2.5 mb-4 sm:mb-5">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-semibold bg-[#17151B] text-[#FF9D32] border border-[#F28C28]/35 shadow-sm shadow-[#481426]/20">
+                    <Calendar className="w-3.5 h-3.5 text-[#F28C28]" />
+                    <span>{exp.duration}</span>
                   </div>
-
-                  {/* Mobile duration indicator */}
-                  <span className="md:hidden inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono bg-[#181D2A] text-[#FF8C00] border border-[#252D40]">
-                    <Calendar className="w-3 h-3" />
-                    {exp.duration}
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-[#17151B] text-slate-300 border border-white/[0.08]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#A83250]" />
+                    <span>{exp.workMode}</span>
                   </span>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-400 mb-5">
-                  <span className="font-semibold text-slate-200">
+                {/* 2. Role title as main heading */}
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-white transition-colors">
+                  {exp.position}
+                </h3>
+
+                {/* 3. Organization name */}
+                <div className="mt-2 flex items-center gap-2">
+                  <Building2 className="w-4 h-4 text-slate-400 shrink-0" />
+                  <span className="text-sm sm:text-[15px] font-semibold text-slate-200">
                     {exp.organization}
                   </span>
-                  <span>•</span>
-                  <span className="inline-flex items-center gap-1 text-slate-400">
-                    <MapPin className="w-3.5 h-3.5 text-[#FF3D71]" />
-                    {exp.workMode}
-                  </span>
                 </div>
 
-                {/* Responsibilities list */}
-                <ul className="space-y-2.5">
+                {/* 4. Subtle divider */}
+                <div className="my-5 sm:my-6 h-[1px] bg-gradient-to-r from-white/[0.08] via-white/[0.04] to-transparent" />
+
+                {/* 5. Responsibilities with clean check icons */}
+                <ul className="space-y-3.5">
                   {exp.responsibilities.map((resp, rIdx) => (
                     <li
                       key={rIdx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed"
+                      className="flex items-start gap-3 text-xs sm:text-[13px] lg:text-sm text-slate-300 leading-relaxed group/item"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                      <span>{resp}</span>
+                      <span className="p-1 rounded-md bg-[#221620] border border-white/[0.08] text-[#F28C28] mt-0.5 shrink-0 group-hover/item:border-[#F28C28]/40 transition-colors shadow-sm">
+                        <Check className="w-3 h-3 text-[#F28C28]" />
+                      </span>
+                      <span className="text-slate-300/95 leading-relaxed font-normal">
+                        {resp}
+                      </span>
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-5 pt-4 border-t border-[#1C2230] flex items-center justify-between text-[11px] text-slate-500 font-mono">
-                  <span>Internship Experience {idx + 1} of 2</span>
-                  <span className="text-emerald-400">Verified by Resume</span>
-                </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>
     </section>
   );
 };
-

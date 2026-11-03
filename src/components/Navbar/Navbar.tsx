@@ -63,35 +63,35 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#0B0D13]/80 backdrop-blur-md border-b border-white/[0.06] shadow-sm py-3'
-          : 'bg-transparent py-4'
+          ? 'bg-[#0B0B10]/85 backdrop-blur-md border-b border-white/[0.06] shadow-md shadow-black/40 py-2.5 sm:py-3'
+          : 'bg-transparent py-3.5 sm:py-4'
       }`}
     >
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-3">
           {/* Logo Brand */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex items-center gap-2.5 group focus:outline-none"
+            className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none min-w-0"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#FF8C00] to-[#FF3D71] p-[1.5px] transition-transform duration-300 group-hover:scale-105">
-              <div className="w-full h-full bg-[#0B0D13] rounded-[7px] flex items-center justify-center">
-                <Terminal className="w-3.5 h-3.5 text-[#FF8C00]" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#F28C28] to-[#A83250] p-[1.5px] transition-transform duration-300 group-hover:scale-105 shrink-0">
+              <div className="w-full h-full bg-[#0B0B10] rounded-[7px] flex items-center justify-center">
+                <Terminal className="w-3.5 h-3.5 text-[#F28C28]" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-[#FF8C00] transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-[#F28C28] transition-colors truncate">
                 Priyam Singh
               </span>
-              <span className="text-[9px] font-medium tracking-wider uppercase text-slate-400">
+              <span className="text-[9px] font-medium tracking-wider uppercase text-slate-400 truncate">
                 Data Analyst | ML
               </span>
             </div>
           </a>
 
-          {/* Clean Horizontal Desktop Navigation (No Box/Card Background) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {/* Clean Horizontal Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
               return (
@@ -102,14 +102,14 @@ export const Navbar = () => {
                   className={`relative py-1 text-[13px] font-medium tracking-wide transition-colors duration-200 select-none ${
                     isActive
                       ? 'text-white font-semibold'
-                      : 'text-slate-400 hover:text-slate-100'
+                      : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   <span>{item.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-[#FF8C00] to-[#FF3D71] rounded-full"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-[#F28C28] via-[#FF9D32] to-[#A83250] rounded-full"
                       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -119,14 +119,14 @@ export const Navbar = () => {
           </nav>
 
           {/* Right Action: Resume & Mobile Menu Button */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <Button
               href="/Priyam-Singh-Resume.pdf"
               download="Priyam-Singh-Resume.pdf"
               variant="outline"
               size="sm"
-              leftIcon={<FileDown className="w-3.5 h-3.5 text-[#FF8C00]" />}
-              className="hidden sm:inline-flex rounded-lg px-3.5 py-1.5 text-xs font-semibold hover:border-[#FF8C00]"
+              leftIcon={<FileDown className="w-3.5 h-3.5 text-[#F28C28]" />}
+              className="hidden sm:inline-flex rounded-lg px-3.5 py-1.5 text-xs font-semibold hover:border-[#F28C28]"
             >
               Resume
             </Button>
@@ -135,7 +135,7 @@ export const Navbar = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white bg-[#131620] border border-[#222838] focus:outline-none focus:ring-1 focus:ring-[#FF8C00]"
+              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white bg-[#17151B] border border-white/[0.08] focus:outline-none focus:ring-1 focus:ring-[#F28C28] transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -151,8 +151,8 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22 }}
-            className="lg:hidden overflow-hidden bg-[#0D1018]/95 border-b border-[#222838] backdrop-blur-xl"
+            transition={{ duration: 0.22, ease: 'easeInOut' }}
+            className="lg:hidden overflow-hidden bg-[#111116]/98 border-b border-[#24222B] backdrop-blur-2xl shadow-2xl"
           >
             <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 pt-3 pb-5 flex flex-col gap-1">
               {navItems.map((item) => {
@@ -162,17 +162,18 @@ export const Navbar = () => {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    className={`px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-all flex items-center justify-between ${
                       isActive
-                        ? 'text-[#FF8C00] bg-[#FF8C00]/10 font-bold'
-                        : 'text-slate-300 hover:bg-[#161A26] hover:text-white'
+                        ? 'text-[#FF9D32] bg-[#481426]/40 font-bold border-l-2 border-[#F28C28]'
+                        : 'text-slate-300 hover:bg-[#17151B] hover:text-white'
                     }`}
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#F28C28]" />}
                   </a>
                 );
               })}
-              <div className="pt-2 mt-1 border-t border-[#222838]">
+              <div className="pt-2 mt-2 border-t border-white/[0.08]">
                 <Button
                   href="/Priyam-Singh-Resume.pdf"
                   download="Priyam-Singh-Resume.pdf"

@@ -1,12 +1,5 @@
 import { motion } from 'framer-motion';
-import {
-  Mail,
-  Linkedin,
-  Github,
-  MapPin,
-  CheckCircle,
-  Clock,
-} from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
 import { profileData } from '../../data/profile';
 import { SectionHeading } from '../../components/SectionHeading/SectionHeading';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
@@ -22,128 +15,164 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 lg:py-28 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/3 -left-48 w-96 h-96 bg-[#F28C28]/4 rounded-full blur-[140px] pointer-events-none" />
+
+      {/* Distinctive typographic background watermark */}
+      <div className="absolute -bottom-8 -right-8 font-mono font-black text-[130px] sm:text-[180px] lg:text-[220px] text-white/[0.012] select-none pointer-events-none tracking-tighter leading-none">
+        CONNECT
+      </div>
+
+      <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
+        {/* Integrated Section Heading */}
         <SectionHeading
           badge="Get In Touch"
           title="Let's Connect"
           subtitle="Open to Opportunities and Collaboration"
+          className="mb-10 sm:mb-12 lg:mb-16"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left Column: Contact Info & Opportunities */}
+        {/* Asymmetric Two-Column Editorial Composition */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-start">
+          {/* Left Column — Personal Contact Introduction & Availability */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-50px' }}
-            className="lg:col-span-5 space-y-6"
+            className="lg:col-span-5 space-y-8"
           >
-            {/* Introduction Card */}
-            <motion.div
-              variants={fadeInUp}
-              className="p-6 sm:p-7 rounded-2xl bg-[#121520] border border-[#222838] space-y-4"
-            >
-              <h3 className="text-xl font-bold text-white tracking-tight">
-                Let's talk data, modeling & impact.
+            {/* Personal Introduction Block */}
+            <motion.div variants={fadeInUp} className="space-y-4">
+              {/* Availability Indicator */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#481426]/35 text-[#FF9D32] border border-[#F28C28]/35">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Open to Opportunities</span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
+                Let's start a conversation.
               </h3>
-              <p className="text-sm text-slate-300 leading-relaxed font-normal">
+
+              <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed font-normal">
                 I'm actively looking for opportunities to apply my skills in Data Analytics,
                 Machine Learning, and software development. I'm open to internships, job
                 opportunities, collaborations, and interesting projects where I can learn,
                 contribute, and grow.
               </p>
+            </motion.div>
 
-              {/* Direct channels */}
-              <div className="space-y-3 pt-3 border-t border-[#1C2230]">
-                {/* Email */}
-                <a
-                  href={`mailto:${profileData.email}`}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-[#171B27] border border-[#262D40] hover:border-[#FF8C00] transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#FF8C00]/15 border border-[#FF8C00]/30 flex items-center justify-center text-[#FF8C00] shrink-0">
+            {/* Text-based Interactive Contact Details with Subtle Separators */}
+            <motion.div
+              variants={fadeInUp}
+              className="pt-2 border-t border-white/[0.08] divide-y divide-white/[0.06]"
+            >
+              {/* Email Link */}
+              <a
+                href={`mailto:${profileData.email}`}
+                className="group py-3.5 flex items-center justify-between text-slate-300 hover:text-white transition-colors"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="p-2 rounded-lg bg-[#17151B] text-[#F28C28] border border-white/[0.06] group-hover:border-[#F28C28]/40 transition-colors shrink-0">
                     <Mail className="w-4 h-4" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-[11px] font-medium text-slate-400">Direct Email</p>
-                    <p className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#FF8C00] transition-colors truncate">
+                  </span>
+                  <div className="min-w-0">
+                    <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                      Email
+                    </span>
+                    <span className="text-sm font-semibold text-white group-hover:text-[#FF9D32] transition-colors truncate block">
                       {profileData.email}
-                    </p>
+                    </span>
                   </div>
-                </a>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-[#F28C28] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0 ml-2" />
+              </a>
 
-                {/* LinkedIn */}
-                <a
-                  href={profileData.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-[#171B27] border border-[#262D40] hover:border-[#38BDF8] transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-[#38BDF8]/15 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8] shrink-0">
+              {/* LinkedIn Link */}
+              <a
+                href={profileData.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group py-3.5 flex items-center justify-between text-slate-300 hover:text-white transition-colors"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="p-2 rounded-lg bg-[#17151B] text-[#38BDF8] border border-white/[0.06] group-hover:border-[#38BDF8]/40 transition-colors shrink-0">
                     <Linkedin className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-medium text-slate-400">LinkedIn Profile</p>
-                    <p className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#38BDF8] transition-colors">
+                  </span>
+                  <div className="min-w-0">
+                    <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                      LinkedIn
+                    </span>
+                    <span className="text-sm font-semibold text-white group-hover:text-[#38BDF8] transition-colors truncate block">
                       priyamsingh10
-                    </p>
+                    </span>
                   </div>
-                </a>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-[#38BDF8] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0 ml-2" />
+              </a>
 
-                {/* GitHub */}
-                <a
-                  href={profileData.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 rounded-xl bg-[#171B27] border border-[#262D40] hover:border-slate-400 transition-colors group"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white shrink-0">
+              {/* GitHub Link */}
+              <a
+                href={profileData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group py-3.5 flex items-center justify-between text-slate-300 hover:text-white transition-colors"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="p-2 rounded-lg bg-[#17151B] text-white border border-white/[0.06] group-hover:border-white/[0.2] transition-colors shrink-0">
                     <Github className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-medium text-slate-400">GitHub Repositories</p>
-                    <p className="text-xs sm:text-sm font-semibold text-white transition-colors">
+                  </span>
+                  <div className="min-w-0">
+                    <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                      GitHub
+                    </span>
+                    <span className="text-sm font-semibold text-white group-hover:text-slate-200 transition-colors truncate block">
                       priyam-10
-                    </p>
+                    </span>
                   </div>
-                </a>
+                </div>
+                <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0 ml-2" />
+              </a>
 
-                {/* Location */}
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-[#171B27] border border-[#262D40]">
-                  <div className="w-10 h-10 rounded-lg bg-[#FF3D71]/15 border border-[#FF3D71]/30 flex items-center justify-center text-[#FF3D71] shrink-0">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-medium text-slate-400">Location</p>
-                    <p className="text-xs sm:text-sm font-semibold text-white">
-                      {profileData.location}
-                    </p>
-                  </div>
+              {/* Location (Non-clickable static detail) */}
+              <div className="py-3.5 flex items-center gap-3 text-slate-300">
+                <span className="p-2 rounded-lg bg-[#17151B] text-[#A83250] border border-white/[0.06] shrink-0">
+                  <MapPin className="w-4 h-4" />
+                </span>
+                <div className="min-w-0">
+                  <span className="block text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                    Location
+                  </span>
+                  <span className="text-sm font-medium text-slate-200">
+                    {profileData.location}
+                  </span>
                 </div>
               </div>
             </motion.div>
 
-            {/* Opportunities Checklist */}
-            <motion.div
-              variants={fadeInUp}
-              className="p-6 rounded-2xl bg-[#121520] border border-[#222838]"
-            >
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#FF8C00]" />
-                Available & Open To
-              </h4>
-              <ul className="space-y-2">
+            {/* Availability Panel (Compact tags, visually secondary) */}
+            <motion.div variants={fadeInUp} className="pt-2">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-3.5 h-3.5 text-[#F28C28]" />
+                <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400">
+                  Currently open to
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {openOpportunities.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-xs text-slate-300">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>{item}</span>
-                  </li>
+                  <span
+                    key={item}
+                    className="px-3 py-1.5 rounded-lg text-xs font-medium bg-[#17151B] text-slate-300 border border-white/[0.06] hover:border-[#F28C28]/35 hover:text-white transition-colors"
+                  >
+                    {item}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Functional Contact Form */}
+          {/* Right Column — Premium Interactive Contact Form */}
           <motion.div
             variants={fadeInUp}
             initial="hidden"
@@ -158,4 +187,3 @@ export const Contact = () => {
     </section>
   );
 };
-

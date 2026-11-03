@@ -26,23 +26,23 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#07090E] border-t border-[#1C2230] pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#0B0B10] border-t border-[#24222B] pt-16 pb-12 relative overflow-hidden">
       {/* Background glow subtle aura */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#FF8C00]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#F28C28]/4 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl 2xl:max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#1C2230]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#24222B]">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF8C00] to-[#FF3D71] p-[1.5px]">
-                <div className="w-full h-full bg-[#0B0D13] rounded-[10px] flex items-center justify-center">
-                  <Terminal className="w-5 h-5 text-[#FF8C00]" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F28C28] via-[#E06D28] to-[#A83250] p-[1.5px]">
+                <div className="w-full h-full bg-[#0B0B10] rounded-[10px] flex items-center justify-center">
+                  <Terminal className="w-5 h-5 text-[#F28C28]" />
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white tracking-tight">Priyam Singh</h3>
-                <p className="text-xs font-medium text-[#FF8C00]">
+                <p className="text-xs font-medium text-[#FF9D32]">
                   Data Analyst | Machine Learning Engineer
                 </p>
               </div>
@@ -58,7 +58,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
-                className="w-10 h-10 rounded-xl bg-[#131620] border border-[#242A38] flex items-center justify-center text-slate-400 hover:text-white hover:border-[#FF8C00] hover:bg-[#FF8C00]/10 transition-all"
+                className="w-10 h-10 rounded-xl bg-[#17151B] border border-[#24222B] flex items-center justify-center text-slate-400 hover:text-white hover:border-[#F28C28]/50 hover:bg-[#1E1420] transition-all"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -67,14 +67,14 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
-                className="w-10 h-10 rounded-xl bg-[#131620] border border-[#242A38] flex items-center justify-center text-slate-400 hover:text-[#38BDF8] hover:border-[#38BDF8] hover:bg-[#38BDF8]/10 transition-all"
+                className="w-10 h-10 rounded-xl bg-[#17151B] border border-[#24222B] flex items-center justify-center text-slate-400 hover:text-[#38BDF8] hover:border-[#38BDF8]/50 hover:bg-[#1E1420] transition-all"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href="mailto:priyamsingh0017@gmail.com"
                 aria-label="Send Email"
-                className="w-10 h-10 rounded-xl bg-[#131620] border border-[#242A38] flex items-center justify-center text-slate-400 hover:text-[#FF3D71] hover:border-[#FF3D71] hover:bg-[#FF3D71]/10 transition-all"
+                className="w-10 h-10 rounded-xl bg-[#17151B] border border-[#24222B] flex items-center justify-center text-slate-400 hover:text-[#FF9D32] hover:border-[#F28C28]/50 hover:bg-[#1E1420] transition-all"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -92,7 +92,7 @@ export const Footer = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-sm text-slate-400 hover:text-[#FF8C00] transition-colors py-1"
+                  className="text-sm text-slate-400 hover:text-[#FF9D32] transition-colors py-1"
                 >
                   {item.name}
                 </a>
@@ -110,13 +110,13 @@ export const Footer = () => {
           <div className="flex items-center gap-6">
             <span className="text-xs text-slate-500 inline-flex items-center gap-1.5">
               <span>Made with analytical rigor</span>
-              <Heart className="w-3.5 h-3.5 text-[#FF3D71] fill-[#FF3D71]" />
+              <Heart className="w-3.5 h-3.5 text-[#A83250] fill-[#A83250]" />
             </span>
 
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white bg-[#131620] border border-[#242A38] hover:border-[#FF8C00] px-3 py-1.5 rounded-lg transition-all"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white bg-[#17151B] border border-[#24222B] hover:border-[#F28C28]/50 hover:bg-[#1E1420] px-3 py-1.5 rounded-lg transition-all cursor-pointer"
               aria-label="Scroll back to top"
             >
               <span>Back to Top</span>
